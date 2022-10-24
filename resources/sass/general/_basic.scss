@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.full-width {
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+}

@@ -1,0 +1,7 @@
+.firstDiv {
+    @apply text-red-500;
+    &__top {
+        @apply text-xl text-green-500;
+    }
+    
+}
