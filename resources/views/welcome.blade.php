@@ -17,7 +17,7 @@
         <div class="firstDiv text-red-500">
             Hello World
             <div class="firstDiv__top">
-                Hello bigger
+                Hello bigger texts
             </div>
         </div>
     </body>
