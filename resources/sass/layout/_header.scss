@@ -1,7 +1,53 @@
-.firstDiv {
-    @apply text-red-500;
-    &__top {
-        @apply text-xl text-green-500;
+.header {
+    @apply bg-white shadow;
+    @apply sticky top-0 z-[100];
+    &__inner {
+        @apply max-w-7xl mx-auto py-6 px-4;
+        @apply flex;
     }
-    
+    &__left {
+        @apply max-w-[200px] w-full;
+    }
+    &__right {
+        @apply flex justify-end items-center w-full;
+    }
+
+    .main-nav {
+        @apply hidden;
+        @screen md { @apply flex gap-8; } 
+        .nav__item {
+            @apply relative;
+            
+            &:before {
+                content:"";
+                @apply absolute -top-[5px] left-0 right-0 w-0 h-[2px] bg-black;
+                @apply transition-all duration-300;
+            }
+
+            &:hover {
+                &:before {
+                    @apply w-[110%];
+                }
+            }
+        }
+        .nav__link {
+            
+        }
+    }
+
+    .hamburger-nav {
+        @apply absolute top-0 right-0 w-0 h-auto max-w-lg overflow-hidden bg-red-200 z-10;
+        @apply flex flex-col gap-4 items-center pt-16;
+        @apply transition-all duration-700 ease-in-out;
+        &.active {
+            @apply w-full;
+        }
+
+        .nav__item {
+
+        }
+        .nav__link {
+            @apply text-xl uppercase;
+        }
+    }
 }

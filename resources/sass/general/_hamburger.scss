@@ -1,0 +1,16 @@
+.hamburger-icon {
+    @apply flex flex-col gap-2 cursor-pointer;
+    @screen md { @apply hidden; }
+    &1, &2, &3 {
+        @apply w-8 h-[3px] bg-black transition-all duration-300;
+    }
+    &1.active {
+        @apply rotate-[45deg] translate-y-[14px];
+    }
+    &2.active {
+        @apply opacity-0;
+    }
+    &3.active {
+        @apply rotate-[-45deg] -translate-y-2;
+    }
+}

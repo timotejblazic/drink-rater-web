@@ -1,0 +1,20 @@
+.button {
+    @apply inline-flex px-4 py-2 rounded-md text-lg border-2 border-transparent text-white;
+    @apply transition-all duration-300;
+    &__primary {
+        @apply bg-blue-500;
+        &:hover {
+            @apply border-blue-500 text-blue-500;
+        }
+    }
+    &__secondary {
+        @apply bg-red-400;
+        &:hover {
+            @apply border-red-400 text-red-400;
+        }
+    }
+
+    &:hover {
+        @apply bg-white;
+    }
+}

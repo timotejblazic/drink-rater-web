@@ -4,6 +4,13 @@
     padding: 0;
 }
 
+.body {
+    @apply font-sans antialiased;
+    &__inner {
+        @apply min-h-screen bg-gray-100;
+    }
+}
+
 .full-width {
     position: relative;
     left: 50%;

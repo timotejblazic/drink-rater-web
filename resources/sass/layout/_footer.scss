@@ -1,0 +1,9 @@
+.footer {
+    @apply bg-white mt-4;
+    box-shadow: 0px -1px 3px 0px rgba(0,0,0,0.1);
+    
+    &__inner {
+        @apply container m-auto;
+        @apply flex justify-between py-4;
+    }
+}

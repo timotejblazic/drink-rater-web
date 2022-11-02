@@ -1,0 +1,19 @@
+.cocktail {
+    @apply border-2 border-transparent rounded-md;
+    @apply transition-all duration-300;
+    &:hover {
+        @apply border-blue-500;
+        box-shadow: -6px 20px 34px rgb(0 92 185 / 25%);
+    }
+
+    &__media {
+        @apply max-w-[200px] mx-auto;
+        img {
+            @apply w-full h-auto rounded;
+        }
+    }
+
+    &__name {
+        @apply text-center text-lg;
+    }
+}

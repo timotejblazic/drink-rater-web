@@ -1,0 +1,71 @@
+.main {
+    @apply min-h-[100vh];
+    &__inner {
+        @apply container m-auto;
+    }
+}
+
+.promo {
+    @apply relative;
+    &__media {
+        @apply relative w-full h-[100vw];
+        @screen md { @apply h-[66vw] max-h-[750px]; }
+        img {
+            @apply absolute w-full h-full object-cover object-center;
+        }
+    }
+    &__content {
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full;
+        @apply text-center text-white bg-black/50 p-4;
+        
+
+        @screen md {
+            @apply top-1/2 left-[10%] p-8 w-auto translate-x-0 translate-y-0;
+            
+        }
+
+        &__heading {
+            @apply text-4xl;
+        }
+        &__body {
+            @apply text-lg mt-4;
+        }
+        &__links {
+            @apply flex justify-between mt-4;
+        }
+    }
+}
+
+.top4 {
+    @apply mt-4 px-2;
+    &__description {
+        @apply mb-4;
+        &__title {
+            @apply text-2xl;
+        }
+        &__links {
+            @apply mt-2;
+        }
+    }
+
+    &__inner {
+        @apply grid grid-cols-2 gap-4 px-2;
+        @screen md { @apply grid-cols-4; }
+    }
+}
+
+.registerinfo {
+    @apply mt-4 px-2;
+    &__title {
+        @apply text-2xl;
+    }
+    &__body {
+        @apply mt-4;
+        ul {
+            @apply list-disc pl-8;
+        }
+    }
+    &__links {
+        @apply mt-2;
+    }
+}
