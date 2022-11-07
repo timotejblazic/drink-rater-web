@@ -16,7 +16,7 @@
             <header class="header">
                 <div class="header__inner">
                     <div class="header__left">
-                        LOGO
+                        <a href="{{ URL::to('/') }}">LOGO</a>
                     </div>
                     <div class="header__right">
 

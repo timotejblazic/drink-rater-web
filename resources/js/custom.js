@@ -1,6 +1,7 @@
 $(document).ready(function() {
     hamburger();
     header();
+    accordions();
 });
 
 function header() {
@@ -26,5 +27,16 @@ function hamburger() {
         icon2.toggleClass('active');
         icon3.toggleClass('active');
         nav.toggleClass('active');
+    });
+}
+
+function accordions() {
+    let accordion = $('.accordion');
+    let accordionTitle = accordion.children().first();
+    let accordionContent = accordion.children().last();
+
+    accordion.on('click', function() {
+        accordionContent.toggleClass('active');
+        accordionTitle.toggleClass('active');
     });
 }

@@ -1,0 +1,12 @@
+.accordion {
+    @apply flex flex-col gap-2;
+    &__title {
+        @apply text-2xl bg-blue-400 py-2 px-4;
+    }
+    &__content {
+        @apply bg-yellow-300 text-xl max-h-0 opacity-0 transition-all duration-300;
+        &.active {
+            @apply max-h-[800px] opacity-100;
+        }
+    }
+}

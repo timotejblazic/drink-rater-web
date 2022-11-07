@@ -1,0 +1,33 @@
+.drinks {
+    @apply flex flex-col gap-4 px-4 my-4;
+    @screen lg { @apply flex-row gap-8; }
+    &__aside {
+        @screen lg { @apply max-w-[350px] flex-grow; }
+    }
+
+    &__main {
+        @apply flex-grow;
+        &__title {
+            @apply text-3xl;
+        }
+    }
+
+    &__list {
+        &__header {
+            @apply flex flex-col gap-2 mt-4 mb-4;
+            @screen lg { @apply flex-row justify-between items-center; }
+            &__number {
+
+            }
+            &__order {
+                @apply bg-gray-300 p-3 rounded;
+            }
+        }
+
+        &__items {
+            @apply grid grid-cols-2 gap-x-4 gap-y-8;
+            @screen xs { @apply grid-cols-3; }
+            @screen lg { @apply grid-cols-4; }
+        }
+    }
+}

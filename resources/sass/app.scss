@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+// Fonts
+@import "fonts/_font";
 
 // Layout
 @import "layout/_header";
 @import "layout/_footer";
 @import "layout/_main";
+@import "layout/_page-drinks";
 
 // General
 @import "general/_basic";
@@ -14,5 +17,6 @@
 @import "general/_hamburger";
 
 // Components
+@import "elements/_accordion";
 @import "elements/_buttons";
 @import "elements/_cocktail";
