@@ -1,9 +1,14 @@
 .cocktail {
     @apply border-2 border-transparent rounded-md;
     @apply transition-all duration-300;
+    @apply relative;
     &:hover {
         @apply border-blue-500;
         box-shadow: -6px 20px 34px rgb(0 92 185 / 25%);
+    }
+
+    &__overlay {
+        @apply absolute top-0 left-0 w-full h-full;
     }
 
     &__media {

@@ -21,7 +21,14 @@
                     25 items
                 </div>
                 <div class="drinks__list__header__order">
-                    Order By:
+                    <div class="dropdown">
+                        <div class="dropdown__title">Order By:</div>
+                        <div class="dropdown__menu">
+                            <a href="#" class="dropdown__link">Ime</a>
+                            <a href="#" class="dropdown__link">Ocena</a>
+                            <a href="#" class="dropdown__link">Ocena2</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 

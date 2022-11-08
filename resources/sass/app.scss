@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+// Animation
+@import "animations/_animations";
+
 // Fonts
 @import "fonts/_font";
 
@@ -17,6 +20,7 @@
 @import "general/_hamburger";
 
 // Components
+@import "elements/_dropdown";
 @import "elements/_accordion";
 @import "elements/_buttons";
 @import "elements/_cocktail";

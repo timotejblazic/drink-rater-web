@@ -21,6 +21,10 @@ Route::get('/drinks', function() {
     return view('drinks');
 });
 
+Route::get('/drink', function() {
+    return view('drink');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

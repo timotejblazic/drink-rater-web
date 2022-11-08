@@ -4,9 +4,11 @@
         @apply text-2xl bg-blue-400 py-2 px-4;
     }
     &__content {
-        @apply bg-yellow-300 text-xl max-h-0 opacity-0 transition-all duration-300;
+        @apply bg-yellow-300 text-xl transition-all duration-300 hidden;
+        animation: rotateMenu 400ms ease-in-out forwards;
+        transform-origin: top center;
         &.active {
-            @apply max-h-[800px] opacity-100;
+            @apply block;
         }
     }
 }

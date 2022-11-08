@@ -1,0 +1,24 @@
+.dropdown {
+    @apply relative;
+    &:hover {
+        .dropdown__menu {
+            @apply flex;
+        }
+    }
+
+    &__title {
+        @apply text-2xl text-white bg-gray-600 px-3 py-2 rounded;
+    }
+    &__menu {
+        @apply hidden flex-col absolute top-full left-0;
+
+        animation: rotateMenu 400ms ease-in-out forwards;
+        transform-origin: top center;
+    }
+    &__link {
+        @apply text-xl p-2 bg-gray-400;
+        &:hover {
+            @apply bg-gray-300;
+        }
+    }
+}
