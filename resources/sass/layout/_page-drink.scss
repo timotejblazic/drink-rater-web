@@ -1,0 +1,58 @@
+.drink {
+    @apply px-4;
+
+    &__header {
+        @apply flex flex-col gap-2 mb-4 mt-2;
+        &__bottom {
+            @apply flex justify-between items-center;
+        }
+        &__back {
+            @apply text-blue-500 italic;
+        }
+    }
+
+
+    &__info {
+        @apply flex flex-col gap-2;
+        @screen xs { @apply flex-row gap-8; }
+    }
+    &__media {
+        @apply mx-auto;
+        @screen xs { @apply mx-0; }
+    }
+    &__description {
+        @apply text-lg;
+        &__title {
+            @apply hidden;
+        }
+    }
+
+
+    &__comments {
+        @apply flex flex-col gap-2 mt-8;
+        &__subtitle {
+            @apply block text-md;
+            a {
+                @apply text-blue-500;
+            }
+        }
+
+        &__body {
+            @apply flex flex-col gap-6;
+        }
+        &__item {
+            @apply flex flex-col bg-white px-2 py-2 rounded;
+            &__header {
+                @apply flex justify-between items-center pb-1 border-b border-gray-300;
+                &__left, &__right {
+                    @apply flex gap-4;
+                }
+            }
+            &__body {
+                @apply mt-2;
+            }
+        }
+    }
+
+    
+}

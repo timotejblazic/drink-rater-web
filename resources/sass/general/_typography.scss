@@ -1,0 +1,27 @@
+h1 {
+    @apply text-4xl;
+    @screen md { @apply text-3xl; }
+}
+h2 {
+    @apply text-3xl;
+    @screen md { @apply text-2xl; }
+}
+h3 {
+    @apply text-2xl;
+    @screen md { @apply text-xl; }
+}
+h4 {
+    @apply text-xl;
+    @screen md { @apply text-lg; }
+}
+h5 {
+    @apply text-lg;
+    @screen md { @apply text-md; }
+}
+h6 {
+    @apply text-md;
+}
+
+ul {
+    @apply list-disc list-inside;
+}

@@ -10,7 +10,7 @@
         @apply text-2xl text-white bg-gray-600 px-3 py-2 rounded;
     }
     &__menu {
-        @apply hidden flex-col absolute top-full left-0;
+        @apply hidden flex-col absolute top-full left-0 z-10 w-full;
 
         animation: rotateMenu 400ms ease-in-out forwards;
         transform-origin: top center;
