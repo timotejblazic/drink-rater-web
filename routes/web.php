@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Cocktail;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        // 'drinks' => Cocktail::orderBy('rating', 'desc')->take(4)->get()
+        'drinks' => Cocktail::all()
+    ]);
 });
 
 Route::get('/drinks', function() {
-    return view('drinks');
+    return view('drinks', [
+        'drinks' => Cocktail::all()
+    ]);
 });
 
-Route::get('/drink', function() {
-    return view('drink');
+Route::get('/drink/{drink}', function($id) {
+    return view('drink', [
+        'drink' => Cocktail::find($id)
+    ]);
 });
 
 Route::get('/dashboard', function () {

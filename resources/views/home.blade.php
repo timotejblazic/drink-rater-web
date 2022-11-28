@@ -37,12 +37,9 @@
                 <a href="{{ config('app.url', '/') }}/drinks" class="button button__primary">All Drinks</a>
             </div>
         </div>
-        <div class="top4__inner">
-            <x-cocktail />
-            <x-cocktail />
-            <x-cocktail />
-            <x-cocktail />
-        </div>
+
+        <x-cocktail-grid class="top4__inner" :cocktails="$drinks" />
+        
     </div>
 
     <div class="registerinfo">

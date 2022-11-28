@@ -32,15 +32,7 @@
                 </div>
             </div>
 
-            <div class="drinks__list__items">
-                <x-cocktail />
-                <x-cocktail />
-                <x-cocktail />
-                <x-cocktail />
-                <x-cocktail />
-                <x-cocktail />
-                <x-cocktail />
-            </div>
+            <x-cocktail-grid :cocktails="$drinks" />
         </div>
     </div>
 

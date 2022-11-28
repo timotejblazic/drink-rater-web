@@ -12,7 +12,7 @@
             </div>
 
             <div class="drink__header__bottom">
-                <h2 class="drink__header__title">Blue Lagoon</h2>
+                <h2 class="drink__header__title">{{ $drink->name }}</h2>
                 <div class="drink__header__rating">Z Z Z Z Z</div>
             </div>
             
@@ -20,10 +20,10 @@
 
         <div class="drink__info">
             <div class="drink__media">
-                <img src="{{ asset('images/cocktails/cocktail.png') }}" alt="drink" width="200" height="250">
+                <img src="{{ asset('images/cocktails/' . $drink->image) }}" alt="drink" width="200" height="250">
             </div>
             <div class="drink__description">
-                <h2 class="drink__description__title">Blue Lagoon</h2>
+                <h2 class="drink__description__title">{{ $drink->name }}</h2>
                 <div class="drink__description__body">
                     Drink is made of:
                     <ul>
