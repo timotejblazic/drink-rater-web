@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Cocktail;
 
@@ -32,6 +33,8 @@ Route::get('/drink/{drink}', function($id) {
         'drink' => Cocktail::find($id)
     ]);
 });
+
+Route::post('/drink/{drink}/comment', [CommentController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

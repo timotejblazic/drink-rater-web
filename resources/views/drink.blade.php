@@ -40,63 +40,52 @@
         <div class="drink__comments">
             <h2 class="drink__comments__title">
                 Comments
-                <span class="drink__comments__subtitle"><a href="{{ config('app.url', '/') }}/login">Log in</a> to post a comment</span>
             </h2>
+            <h4 class="drink__comments__subtitle">
+
+                @auth
+                    <form class="drink__comments__form" method="POST" action="{{ config('app.url', '/') }}/drink/{{ $drink->id }}/comment">
+                        @csrf
+                        <header class="drink__comments__form__header">
+                            <img class="drink__comments__form__header__image" src="https://i.pravatar.cc/60?u={{ auth()->id() }}" alt="" width="40" height="40" >
+                            <h3 class="drink__comments__form__header__text">Want to participate?</h3>
+                        </header>
+
+                        <div class="drink__comments__form__body">
+                            <textarea name="body"
+                                    class="drink__comments__form__body__textarea"
+                                    rows="5"
+                                    placeholder="What do you think about this drink?"
+                                    required></textarea>
+
+                            @error('body')
+                                <span class="drink__comments__form__error">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="drink__comments__form__footer">
+                            <button class="button button__primary">Submit</button>
+                        </div>
+                    </form>
+                @else
+                    <a href="{{ config('app.url', '/') }}/login">Log in</a> to post a comment
+                @endauth
+
+            </h4>
             <div class="drink__comments__body">
                 
 
-                <div class="drink__comments__item">
-                    <div class="drink__comments__item__header">
-                        <div class="drink__comments__item__header__left">
-                            <div class="drink__comments__item__header__name">
-                                <a href="#">John Doe</a>
-                            </div>
-                            <div class="drink__comments__item__header__rating">Z Z Z Z Z</div>
-                        </div>
-                        <div class="drink__comments__item__header__right">
-                            <div class="drink__comments__item__header__date">12.12.2020</div>
-                        </div>
+                <!-- COCKTAIL COMMENTS -->
+
+                @if ($drink->comments->count())
+                    @foreach ($drink->comments as $comment)
+                        <x-cocktail-comment :comment="$comment" />
+                    @endforeach
+                @else
+                    <div class="drink__comments__body__empty">
+                        <i>No comments yet.</i>
                     </div>
-                    <div class="drink__comments__item__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                    </div>
-                </div>
-
-
-                <div class="drink__comments__item">
-                    <div class="drink__comments__item__header">
-                        <div class="drink__comments__item__header__left">
-                            <div class="drink__comments__item__header__name">John Doe</div>
-                            <div class="drink__comments__item__header__rating">Z Z Z Z Z</div>
-                        </div>
-                        <div class="drink__comments__item__header__right">
-                            <div class="drink__comments__item__header__date">12.12.2020</div>
-                        </div>
-                    </div>
-                    <div class="drink__comments__item__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                    </div>
-                </div>
-
-
-                <div class="drink__comments__item">
-                    <div class="drink__comments__item__header">
-                        <div class="drink__comments__item__header__left">
-                            <div class="drink__comments__item__header__name">John Doe</div>
-                            <div class="drink__comments__item__header__rating">Z Z Z Z Z</div>
-                        </div>
-                        <div class="drink__comments__item__header__right">
-                            <div class="drink__comments__item__header__date">12.12.2020</div>
-                        </div>
-                    </div>
-                    <div class="drink__comments__item__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                    </div>
-                </div>
-
-
-
-
+                @endif
                 
             </div>
         </div>

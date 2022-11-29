@@ -36,6 +36,34 @@
                 @apply text-blue-500;
             }
         }
+        &__form {
+            @apply flex flex-col gap-2 p-4 rounded-lg bg-white;
+            &__header {
+                @apply flex flex-wrap;
+                &__image {
+                    @apply w-[40px] h-[40px] rounded-full;
+                }
+                &__text {
+                    @apply ml-4;
+                }
+            }
+            &__body {
+                @apply mt-6;
+                &__textarea {
+                    @apply w-full border-gray-300;
+                    &:focus {
+                        @apply outline-none ring;
+                    }
+                      
+                }
+            }
+            &__error {
+                @apply text-red-500 text-sm;
+            }
+            &__footer {
+                @apply flex justify-end mt-6 pt-4 border-t border-gray-200;
+            }
+        }
 
         &__body {
             @apply flex flex-col gap-6;
