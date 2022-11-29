@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CocktailController;
 use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Cocktail;
@@ -15,26 +16,16 @@ use App\Models\Cocktail;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        // 'drinks' => Cocktail::orderBy('rating', 'desc')->take(4)->get()
-        'drinks' => Cocktail::all()
-    ]);
-});
+Route::get('/', [CocktailController::class, 'top4']);
 
-Route::get('/drinks', function() {
-    return view('drinks', [
-        'drinks' => Cocktail::all()
-    ]);
-});
+Route::get('/drinks', [CocktailController::class, 'index']);
 
-Route::get('/drink/{drink}', function($id) {
-    return view('drink', [
-        'drink' => Cocktail::find($id)
-    ]);
-});
+Route::get('/drink/{drink}', [CocktailController::class, 'show']);
 
 Route::post('/drink/{drink}/comment', [CommentController::class, 'store']);
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
