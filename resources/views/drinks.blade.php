@@ -18,7 +18,7 @@
 
             <div class="drinks__list__header">
                 <div class="drinks__list__header__number">
-                    25 items
+                    {{ $drinks->count() }} drinks
                 </div>
                 <div class="drinks__list__header__order">
                     <div class="dropdown">

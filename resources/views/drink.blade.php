@@ -27,11 +27,13 @@
                 <div class="drink__description__body">
                     Drink is made of:
                     <ul>
-                        <li>Vodka</li>
-                        <li>Rum</li>
-                        <li>Orange juice</li>
-                        <li>Red Bull</li>
-                        <li>Monster</li>
+                        @if ($drink->ingredients->count()) 
+                            @foreach ($drink->ingredients as $ingredient)
+                                <li>{{ $ingredient->name }}</li>
+                            @endforeach
+                        @else
+                            <li>There are no ingredients yet.</li>
+                        @endif
                     </ul>
                 </div>
             </div>

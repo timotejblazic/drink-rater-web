@@ -12,4 +12,8 @@ class Cocktail extends Model
     public function comments() {
         return $this->hasMany(Comment::class);
     }
+
+    public function ingredients() {
+        return $this->belongsToMany(Ingredient::class);
+    }
 }
