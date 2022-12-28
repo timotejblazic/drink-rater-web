@@ -25,4 +25,12 @@ class CocktailController extends Controller
             'drink' => $drink
         ]);
     }
+
+    public function rate(Cocktail $drink, Request $request) {
+        echo "Rating: " . $request->rating . " for drink: " . $drink->name;
+
+        $drink->rating = $request->rating;
+        // $drink->save();
+        // return redirect()->back();
+    }
 }

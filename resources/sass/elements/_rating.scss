@@ -1,0 +1,28 @@
+.rating {
+    &__form {
+        &__body {
+            input {
+                @apply relative w-[40px] h-[40px] bg-transparent border-none cursor-pointer;
+                box-shadow: none;
+                &:after {
+                    content: "";
+                    @apply absolute top-0 left-0 w-full h-full bg-[url("../../public/images/svgs/rating-star-empty.svg")] bg-no-repeat bg-contain bg-center;
+                }
+
+                &:focus, &:checked, &:focus:checked, &:checked:hover {
+                    @apply bg-transparent border-none;
+                    box-shadow: none;
+                }
+
+                &.active {
+                    &:after {
+                        @apply bg-[url("../../public/images/svgs/rating-star-active.svg")];
+                    }
+                }
+            }
+        }
+        &__button {
+            @apply mt-4;
+        }
+    }
+}

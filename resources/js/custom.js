@@ -2,6 +2,7 @@ $(document).ready(function() {
     hamburger();
     header();
     accordions();
+    ratingStars();
 });
 
 function header() {
@@ -38,5 +39,36 @@ function accordions() {
     accordion.on('click', function() {
         accordionContent.toggleClass('active');
         accordionTitle.toggleClass('active');
+    });
+}
+
+function ratingStars() {
+    let stars = $(".drink__rater__form__body input");
+
+    // Go through each star and if it's clicked or hovered over, add the active class to that and each prevous star
+    stars.each(function() {
+        $(this).on('click', function() {
+            // Remove active class from all stars
+            stars.removeClass('active');
+
+            $(this).addClass('active');
+            $(this).prevAll().addClass('active');
+        });
+
+        $(this).on('mouseover', function() {
+            // If any star is checked, don't add active class
+            if ( !stars.is(':checked') ) {
+                $(this).addClass('active');
+                $(this).prevAll().addClass('active');   
+            }
+        });
+
+        $(this).on('mouseout', function() {
+            // If any star is checked, don't remove active class
+            if ( !stars.is(':checked') ) {
+                $(this).removeClass('active');
+                $(this).prevAll().removeClass('active');
+            }
+        });
     });
 }

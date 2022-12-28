@@ -24,6 +24,8 @@ Route::get('/drink/{drink}', [CocktailController::class, 'show']);
 
 Route::post('/drink/{drink}/comment', [CommentController::class, 'store']);
 
+Route::post('/drink/{drink}/rate', [CocktailController::class, 'rate']);
+
 
 
 

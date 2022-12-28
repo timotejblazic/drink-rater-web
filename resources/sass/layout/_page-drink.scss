@@ -27,6 +27,10 @@
         }
     }
 
+    &__rater {
+        @apply flex flex-col gap-2 mt-8;
+    }
+
 
     &__comments {
         @apply flex flex-col gap-2 mt-8;
