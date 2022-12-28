@@ -4,7 +4,7 @@
     &__header {
         @apply flex flex-col gap-2 mb-4 mt-2;
         &__bottom {
-            @apply flex justify-between items-center;
+            @apply flex justify-between items-center flex-wrap;
         }
         &__back {
             @apply text-blue-500 italic;
