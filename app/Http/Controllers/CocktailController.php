@@ -37,12 +37,6 @@ class CocktailController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
-        echo "ALL RATINGS:";
-
-        foreach($drink->ratings as $rating) {
-            echo $rating->rating;
-        }
-        
-        // return redirect()->back();
+        return redirect()->back();
     }
 }
