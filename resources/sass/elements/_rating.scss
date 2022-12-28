@@ -24,5 +24,8 @@
         &__button {
             @apply mt-4;
         }
+        &__error {
+            @apply mt-4 text-red-500;
+        }
     }
 }

@@ -3,6 +3,7 @@ $(document).ready(function() {
     header();
     accordions();
     ratingStars();
+    displayRatingStars();
 });
 
 function header() {
@@ -70,5 +71,17 @@ function ratingStars() {
                 $(this).prevAll().removeClass('active');
             }
         });
+    });
+}
+
+function displayRatingStars() {
+    let ratingAvg = $(".drink__header__rating__number").text();
+    let stars = $(".drink__header__rating__star");
+    
+    // Go through each star and if it's less than the average rating, add the active class to that and each prevous star
+    stars.each(function() {
+        if ( $(this).data('rating') <= ratingAvg ) {
+            $(this).addClass('active');
+        }
     });
 }

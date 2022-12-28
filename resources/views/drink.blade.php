@@ -14,7 +14,12 @@
             <div class="drink__header__bottom">
                 <h2 class="drink__header__title">{{ $drink->name }}</h2>
                 <div class="drink__header__rating">
-                    Z Z Z Z Z
+                    <span class="drink__header__rating__number" style="display:none;">{{ $drink->ratings->avg('rating') }}</span>
+                    <div class="drink__header__rating__star" data-rating="1"></div>
+                    <div class="drink__header__rating__star" data-rating="2"></div>
+                    <div class="drink__header__rating__star" data-rating="3"></div>
+                    <div class="drink__header__rating__star" data-rating="4"></div>
+                    <div class="drink__header__rating__star" data-rating="5"></div>
                 </div>
             </div>
             
@@ -57,6 +62,10 @@
                         <input type="radio" name="rating" value="5" id="rating_5">
                     </div>
                     <button class="drink__rater__form__button rating__form__button button button__primary" type="submit">Rate</button>
+                    <!-- if there's error message show it -->
+                    @if (session('error'))
+                        <p class="drink__rater__form__error rating__form__error">{{ session('error') }}</p>
+                    @endif
                 </form>
             @else
                 <p>You need to be logged in to rate a drink.</p>

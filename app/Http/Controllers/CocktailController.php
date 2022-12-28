@@ -27,10 +27,22 @@ class CocktailController extends Controller
     }
 
     public function rate(Cocktail $drink, Request $request) {
-        echo "Rating: " . $request->rating . " for drink: " . $drink->name;
+        // Check if user has already rated this drink and return error message if so
+        if($drink->ratings()->where('user_id', auth()->user()->id)->exists()) {
+            return redirect()->back()->with('error', 'You have already rated this drink!');
+        }
 
-        $drink->rating = $request->rating;
-        // $drink->save();
+        $drink->ratings()->create([
+            'rating' => $request->rating,
+            'user_id' => auth()->user()->id
+        ]);
+
+        echo "ALL RATINGS:";
+
+        foreach($drink->ratings as $rating) {
+            echo $rating->rating;
+        }
+        
         // return redirect()->back();
     }
 }
