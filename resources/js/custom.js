@@ -4,6 +4,7 @@ $(document).ready(function() {
     accordions();
     ratingStars();
     displayRatingStars();
+    dropdown();
 });
 
 function header() {
@@ -82,6 +83,25 @@ function displayRatingStars() {
     stars.each(function() {
         if ( $(this).data('rating') <= ratingAvg ) {
             $(this).addClass('active');
+        }
+    });
+}
+
+function dropdown() {
+    let dropdown = $('.dropdown-click');
+    let dropdownTitle = dropdown.children().first();
+    let dropdownContent = dropdown.children().last();
+
+    dropdown.on('click', function() {
+        dropdownContent.toggleClass('active');
+        dropdownTitle.toggleClass('active');
+    });
+
+    // Close dropdown if clicked outside of it
+    $(document).on('click', function(event) {
+        if ( !$(event.target).closest(dropdown).length ) {
+            dropdownContent.removeClass('active');
+            dropdownTitle.removeClass('active');
         }
     });
 }

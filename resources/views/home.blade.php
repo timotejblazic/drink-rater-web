@@ -17,11 +17,11 @@
             <div class="promo__content__inner">
                 <h1 class="promo__content__heading">Welcome to Parlament Drinks</h1>
                 <div class="promo__content__body">
-                    Check and rate all of Parlament's drink!
+                    Check and rate all of Parlament's drinks!
                 </div>
                 <div class="promo__content__links">
-                    <a href="{{ config('app.url', '/') }}/drinks" class="button button__primary">All Drinks</a>
-                    <a href="{{ config('app.url', '/') }}/login" class="button button__secondary">Login</a>
+                    <a href="{{ route('drinks') }}" class="button button__primary">All Drinks</a>
+                    <a href="{{ route('login') }}" class="button button__secondary">Login</a>
                 </div>
             </div>
         </div>

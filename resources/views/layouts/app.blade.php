@@ -22,18 +22,51 @@
 
                         <nav class="main-nav">
                             <div class="nav__item">
-                                <a href="#" class="nav__link">Link1</a>
+                                <a href="{{ route('home') }}" class="nav__link">Home</a>
                             </div>
                             <div class="nav__item">
-                                <a href="#" class="nav__link">Link2</a>
+                                <a href="{{ route('drinks') }}" class="nav__link">All Drinks</a>
                             </div>
                             <div class="nav__item">
-                                <a href="#" class="nav__link">Link3</a>
-                            </div>
-                            <div class="nav__item">
-                                <a href="#" class="nav__link">Link4</a>
+                                <a href="#" class="nav__link">Favorited Drinks</a>
                             </div>
                         </nav>
+
+                        <!-- USER MENU -->
+                        <div class="user-nav dropdown-click">
+                            <div class="dropdown__first">
+                                <div class="dropdown__first__icon">
+                                    <img src="{{ asset('images/svgs/user.svg') }}" alt="user" width="40" height="40">
+                                </div>
+                                @auth
+                                    <div class="dropdown__first__title">
+                                        <div>Welcome, </div>
+                                        <div>{{ Auth::user()->name }}</div>
+                                    </div>
+                                @endauth
+                            </div>
+                            <div class="dropdown__main">
+                                <div class="dropdown__main__item">
+                                    <a href="{{ route('dashboard') }}" class="dropdown__main__link">Profile</a>
+                                </div>
+                                @auth
+                                    <div class="dropdown__main__item">
+                                        <form method="POST" action="{{ route('logout') }}" class="dropdown__main__link">
+                                            @csrf
+
+                                            <button type="submit">Log Out</button>
+                                        </form>
+                                    </div>
+                                @else
+                                    <div class="dropdown__main__item">
+                                        <a href="{{ route('register') }}" class="dropdown__main__link">Register</a>
+                                    </div>
+                                    <div class="dropdown__main__item">
+                                    <a href="{{ route('login') }}" class="dropdown__main__link">Log In</a>
+                                </div>
+                                @endauth 
+                            </div>
+                        </div>
 
                         <!-- HAMBURGER -->
                         <div class="hamburger-icon">
@@ -44,16 +77,13 @@
                         
                         <nav class="hamburger-nav">
                             <div class="nav__item">
-                                <a href="#" class="nav__link">Link1</a>
+                                <a href="{{ route('home') }}" class="nav__link">Home</a>
                             </div>
                             <div class="nav__item">
-                                <a href="#" class="nav__link">Link2</a>
+                                <a href="{{ route('drinks') }}" class="nav__link">All Drinks</a>
                             </div>
                             <div class="nav__item">
-                                <a href="#" class="nav__link">Link3</a>
-                            </div>
-                            <div class="nav__item">
-                                <a href="#" class="nav__link">Link4</a>
+                                <a href="#" class="nav__link">Favorited Drinks</a>
                             </div>
                         </nav>
                     </div>

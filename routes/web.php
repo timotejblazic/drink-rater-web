@@ -16,9 +16,9 @@ use App\Models\Cocktail;
 |
 */
 
-Route::get('/', [CocktailController::class, 'top4']);
+Route::get('/', [CocktailController::class, 'top4'])->name('home');
 
-Route::get('/drinks', [CocktailController::class, 'index']);
+Route::get('/drinks', [CocktailController::class, 'index'])->name('drinks');
 
 Route::get('/drink/{drink}', [CocktailController::class, 'show']);
 

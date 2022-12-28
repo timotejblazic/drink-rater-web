@@ -22,3 +22,44 @@
         }
     }
 }
+
+
+
+.dropdown-click {
+    @apply relative;
+    .dropdown__first {
+        @apply flex items-center gap-2;
+        &__title {
+            @apply text-sm;
+            div:last-child {
+                @apply italic;
+            }
+        }
+        &.active {
+
+        }
+
+    }
+    .dropdown__main {
+        @apply hidden absolute top-full left-0 bg-gray-200;
+
+        animation: rotateMenu 400ms ease-in-out forwards;
+        transform-origin: top center;
+
+        &__item {
+            @apply flex;
+            &:hover {
+                @apply bg-gray-300;
+            }
+        }
+        &__link {
+            @apply px-4 py-2 shrink-0;
+        }
+
+        &.active {
+            @apply block;
+        }
+    }
+    
+
+}

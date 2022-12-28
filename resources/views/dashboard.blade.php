@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot:pageTitle>
-        {{ config('app.name', 'Laravel') }} - Drink
+        {{ config('app.name', 'Laravel') }} - Dashboard
     </x-slot>
 
     <x-slot name="header">
