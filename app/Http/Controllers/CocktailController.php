@@ -29,8 +29,13 @@ class CocktailController extends Controller
     public function rate(Cocktail $drink, Request $request) {
         // Check if user has already rated this drink and return error message if so
         if($drink->ratings()->where('user_id', auth()->user()->id)->exists()) {
-            return redirect()->back()->with('error', 'You have already rated this drink!');
+            return redirect()->back()->with('alreadyExists', 'You have already rated this drink!');
         }
+
+        // Validate input data
+        $request->validate([
+            'rating' => 'required|integer|min:1|max:5'
+        ]);
 
         $drink->ratings()->create([
             'rating' => $request->rating,

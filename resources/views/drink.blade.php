@@ -60,12 +60,16 @@
                         <input type="radio" name="rating" value="3" id="rating_3">
                         <input type="radio" name="rating" value="4" id="rating_4">
                         <input type="radio" name="rating" value="5" id="rating_5">
+                        @error('rating')
+                            <p class="drink__rater__form__error rating__form__error">{{ $message }}</p>
+                        @enderror
                     </div>
                     <button class="drink__rater__form__button rating__form__button button button__primary" type="submit">Rate</button>
                     <!-- if there's error message show it -->
-                    @if (session('error'))
-                        <p class="drink__rater__form__error rating__form__error">{{ session('error') }}</p>
+                    @if (session('alreadyExists'))
+                        <p class="drink__rater__form__error rating__form__error">{{ session('alreadyExists') }}</p>
                     @endif
+                    
                 </form>
             @else
                 <p>You need to be logged in to rate a drink.</p>
