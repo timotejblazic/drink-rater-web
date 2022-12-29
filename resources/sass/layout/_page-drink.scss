@@ -17,6 +17,9 @@
                     @apply bg-[url("../../public/images/svgs/rating-star-active.svg")];
                 }
             }
+            &__fill {
+                @apply w-0 h-full bg-[url("../../public/images/svgs/rating-star-active.svg")] bg-no-repeat bg-cover bg-left;
+            }
         }
     }
 
