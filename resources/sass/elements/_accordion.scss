@@ -1,7 +1,15 @@
 .accordion {
     @apply flex flex-col gap-2;
     &__title {
-        @apply text-2xl bg-gray-200 py-2 px-4;
+        @apply flex justify-between items-center text-2xl bg-gray-200 py-2 px-4;
+        &__arrow {
+            @apply w-8 h-8 bg-[url("../../public/images/svgs/arrow-down.svg")] bg-no-repeat bg-contain;
+            @apply transition-all duration-300;
+            &.active {
+                @apply rotate-180;
+            }
+
+        }
     }
     &__content {
         @apply bg-white shadow-sm text-xl transition-all duration-300 hidden;

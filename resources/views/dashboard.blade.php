@@ -26,7 +26,10 @@
 
                 <!-- ACCORDION MENU FOR MOBILE -->
                 <div class="accordion">
-                    <a class="accordion__title" href="#">Navigation</a>
+                    <a class="accordion__title" href="#">
+                        <span class="accordion__title__content">My Profile</span>
+                        <span class="accordion__title__arrow"></span>
+                    </a>
                     <div class="accordion__content">
                         <div class="dashboard__nav__item active">
                             <button class="dashboard__nav__link" data-content="myProfile">My Profile</button>

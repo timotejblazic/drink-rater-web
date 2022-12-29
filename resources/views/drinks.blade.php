@@ -6,7 +6,10 @@
     <div class="drinks">
         <aside class="drinks__aside">
             <div class="accordion">
-                <a class="accordion__title" href="#">Filtri</a>
+                <a class="accordion__title" href="#">
+                    <span class="accordion__title__content">Filtri</span>
+                    <span class="accordion__title__arrow"></span>
+                </a>
                 <div class="accordion__content">
                     This is accordion content
                 </div>

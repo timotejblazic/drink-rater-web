@@ -38,11 +38,13 @@ function hamburger() {
 function accordions() {
     let accordion = $('.accordion');
     let accordionTitle = accordion.children().first();
+    let accordionArrow = accordionTitle.children().last();
     let accordionContent = accordion.children().last();
 
     accordion.on('click', function() {
         accordionContent.toggleClass('active');
         accordionTitle.toggleClass('active');
+        accordionArrow.toggleClass('active');
     });
 }
 
@@ -127,6 +129,9 @@ function dashboardNavigation() {
         $(this).on('click', function() {
             navItems.removeClass('active');
             $(this).parent().addClass('active');
+
+            // Change accordion title to the clicked link
+            $(".accordion").children().first().children().first().text($(this).text());
 
             let contentData = $(this).data('content');
             let contentItem = $('#' + contentData);
