@@ -22,15 +22,15 @@ Route::get('/drinks', [CocktailController::class, 'index'])->name('drinks');
 
 Route::get('/drink/{drink}', [CocktailController::class, 'show']);
 
-Route::post('/drink/{drink}/comment', [CommentController::class, 'store']);
+Route::post('/drink/{drink}/comment', [CommentController::class, 'store'])->middleware('verified');
 
-Route::post('/drink/{drink}/rate', [CocktailController::class, 'rate']);
+Route::post('/drink/{drink}/rate', [CocktailController::class, 'rate'])->middleware('verified');
 
 
 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
