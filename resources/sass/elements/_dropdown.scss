@@ -11,6 +11,7 @@
     }
     &__menu {
         @apply hidden flex-col absolute top-full left-0 z-10 w-full;
+        filter: drop-shadow(3px 5px 10px #1B1B1B);
 
         animation: rotateMenu 400ms ease-in-out forwards;
         transform-origin: top center;
@@ -26,7 +27,7 @@
 
 
 .dropdown-click {
-    @apply relative;
+    @apply relative cursor-pointer;
     .dropdown__first {
         @apply flex items-center gap-2;
         &__title {
@@ -42,6 +43,7 @@
     }
     .dropdown__main {
         @apply hidden absolute top-full left-0 bg-gray-200;
+        filter: drop-shadow(3px 5px 10px #1B1B1B);
 
         animation: rotateMenu 400ms ease-in-out forwards;
         transform-origin: top center;

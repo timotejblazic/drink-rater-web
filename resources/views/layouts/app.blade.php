@@ -54,7 +54,7 @@
                                         <form method="POST" action="{{ route('logout') }}" class="dropdown__main__link">
                                             @csrf
 
-                                            <button type="submit">Log Out</button>
+                                            <button type="submit" style="color:red;">Log Out</button>
                                         </form>
                                     </div>
                                 @else

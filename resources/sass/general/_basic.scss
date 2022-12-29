@@ -5,7 +5,7 @@
 }
 
 .body {
-    @apply font-sans antialiased;
+    @apply font-sans antialiased overflow-x-hidden;
     &__inner {
         @apply min-h-screen bg-gray-100;
     }
