@@ -6,6 +6,7 @@ $(document).ready(function() {
     displayRatingStars();
     dropdown();
     dashboardNavigation();
+    profileShowRatingStars();
 });
 
 function header() {
@@ -132,6 +133,21 @@ function dashboardNavigation() {
 
             contentItems.removeClass('active');
             contentItem.addClass('active');
+        });
+    });
+}
+
+function profileShowRatingStars() {
+    let ratingWrapper = $(".rating__item__left__rating");
+
+    ratingWrapper.each(function() {
+        let ratingNumber = $(this).children().first().text();
+        let ratingStars = $(this).children().not(':first');
+        
+        ratingStars.each(function() {
+            if ( $(this).data('rating') <= ratingNumber ) {
+                $(this).addClass('active');
+            }
         });
     });
 }

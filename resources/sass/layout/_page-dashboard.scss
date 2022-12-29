@@ -60,3 +60,24 @@
 .white-box {
     @apply shadow-sm bg-white px-6 py-4;
 }
+
+.rating {
+    &__item {
+        @apply flex justify-between items-center flex-wrap gap-4 p-4;
+        &__left {
+            @apply flex items-center flex-wrap gap-4;
+            &__name {
+                @apply basis-full;
+            }
+            &__rating {
+                @apply flex gap-2;
+                &__star {
+                    @apply w-[30px] h-[30px] bg-[url("../../public/images/svgs/rating-star-empty.svg")] bg-no-repeat bg-contain bg-center;
+                    &.active {
+                        @apply bg-[url("../../public/images/svgs/rating-star-active.svg")];
+                    }
+                }
+            }
+        }
+    }
+}

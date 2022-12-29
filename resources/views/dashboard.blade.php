@@ -55,11 +55,18 @@
                     </div>
 
                     <div class="dashboard__content__item" id="myRatings">
-                        My ratings content
+                        @if (Auth::user()->ratings->count())
+                            @foreach (Auth::user()->ratings as $rating)
+                                <x-user-rating :rating="$rating" />
+                            @endforeach
+                        @else
+                            <div class="dashboard__content__item__empty">
+                                <i>No ratings yet.</i>
+                            </div>
+                        @endif
                     </div>
 
                     <div class="dashboard__content__item" id="myComments">
-
                         @if (Auth::user()->comments->count())
                             @foreach (Auth::user()->comments as $comment)
                                 <x-user-comment :comment="$comment" />
