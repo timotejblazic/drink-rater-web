@@ -1,0 +1,43 @@
+.dashboard {
+    @apply mt-8;
+    @apply max-w-7xl mx-auto;
+
+    &__header {
+        &__title {
+            span {
+                @apply italic font-medium;
+            }
+        }
+    }
+    &__body {
+        @apply flex gap-8 mt-8;
+    }
+    &__nav {
+        @apply flex flex-col;
+        @apply shadow-sm bg-white;
+        &__item {
+            &.active {
+                @apply bg-gray-300;
+            }
+        }
+        &__link {
+            @apply text-lg pb-4 px-4 w-full text-left;
+            &:first-child {
+                @apply pt-4;
+            }
+        }
+    }
+    &__content {
+        @apply flex-grow;
+        &__item {
+            @apply hidden;
+            &.active {
+                @apply block;
+            }
+        }
+    }
+}
+
+.white-box {
+    @apply shadow-sm bg-white px-6 py-4;
+}

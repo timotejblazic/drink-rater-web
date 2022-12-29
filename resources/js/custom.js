@@ -5,6 +5,7 @@ $(document).ready(function() {
     ratingStars();
     displayRatingStars();
     dropdown();
+    dashboardNavigation();
 });
 
 function header() {
@@ -113,5 +114,24 @@ function dropdown() {
             dropdownContent.removeClass('active');
             dropdownTitle.removeClass('active');
         }
+    });
+}
+
+function dashboardNavigation() {
+    let navLinks = $('.dashboard__nav__link');
+    let navItems = $('.dashboard__nav__item');
+    let contentItems = $('.dashboard__content__item');
+
+    navLinks.each(function() {
+        $(this).on('click', function() {
+            navItems.removeClass('active');
+            $(this).parent().addClass('active');
+
+            let contentData = $(this).data('content');
+            let contentItem = $('#' + contentData);
+
+            contentItems.removeClass('active');
+            contentItem.addClass('active');
+        });
     });
 }
