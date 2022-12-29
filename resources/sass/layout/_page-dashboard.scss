@@ -10,12 +10,19 @@
         }
     }
     &__body {
-        @apply flex gap-8 mt-8;
+        @apply flex flex-col gap-8 mt-8;
+        @screen md {
+            @apply flex-row;
+        }
     }
     &__nav {
-        @apply flex flex-col;
-        @apply shadow-sm bg-white;
+        @apply hidden;
+        @screen md {
+            @apply flex flex-col;
+            @apply shadow-sm bg-white;
+        }
         &__item {
+            @apply shrink-0;
             &.active {
                 @apply bg-gray-300;
             }
@@ -27,6 +34,12 @@
             }
         }
     }
+
+    .accordion {
+        @apply flex;
+        @screen md { @apply hidden; }
+    }
+
     &__content {
         @apply flex-grow;
         &__item {

@@ -1,10 +1,10 @@
 .accordion {
     @apply flex flex-col gap-2;
     &__title {
-        @apply text-2xl bg-blue-400 py-2 px-4;
+        @apply text-2xl bg-gray-200 py-2 px-4;
     }
     &__content {
-        @apply bg-yellow-300 text-xl transition-all duration-300 hidden;
+        @apply bg-white shadow-sm text-xl transition-all duration-300 hidden;
         animation: rotateMenu 400ms ease-in-out forwards;
         transform-origin: top center;
         &.active {
