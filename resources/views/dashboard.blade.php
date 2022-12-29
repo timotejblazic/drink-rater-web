@@ -49,14 +49,26 @@
                     <div class="dashboard__content__item active" id="myProfile">
                         My profile content
                     </div>
+
                     <div class="dashboard__content__item" id="favoriteDrinks">
                         My favorite drinks content
                     </div>
+
                     <div class="dashboard__content__item" id="myRatings">
                         My ratings content
                     </div>
+
                     <div class="dashboard__content__item" id="myComments">
-                        My comments content
+
+                        @if (Auth::user()->comments->count())
+                            @foreach (Auth::user()->comments as $comment)
+                                <x-user-comment :comment="$comment" />
+                            @endforeach
+                        @else
+                            <div class="dashboard__content__item__empty">
+                                <i>No comments yet.</i>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

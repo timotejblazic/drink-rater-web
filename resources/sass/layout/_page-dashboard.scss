@@ -18,7 +18,7 @@
     &__nav {
         @apply hidden;
         @screen md {
-            @apply flex flex-col;
+            @apply flex flex-col self-start;
             @apply shadow-sm bg-white;
         }
         &__item {
@@ -46,6 +46,12 @@
             @apply hidden;
             &.active {
                 @apply block;
+            }
+            > div {
+                @apply border border-gray-200 mb-8;
+                &:last-child {
+                    @apply mb-0;
+                }
             }
         }
     }

@@ -4,7 +4,7 @@
     <div class="drink__comments__item__header">
         <div class="drink__comments__item__header__left">
             <div class="drink__comments__item__header__name">
-                <a href="#">{{ $comment->user->name }}</a>
+                <a href="{{ route('drink', ['drink' => $comment->cocktail->id ]) }}">{{ $comment->cocktail->name }}</a>
             </div>
         </div>
         <div class="drink__comments__item__header__right">
