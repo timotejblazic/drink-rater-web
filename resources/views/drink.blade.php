@@ -13,7 +13,7 @@
 
             <div class="drink__header__bottom">
                 <h2 class="drink__header__title">{{ $drink->name }}</h2>
-                <div class="drink__header__rating">
+                <div class="drink__header__rating" title="{{ $drink->ratings->avg('rating') }}">
                     <span class="drink__header__rating__number" style="display:none;">{{ $drink->ratings->avg('rating') }}</span>
                     <div class="drink__header__rating__star" data-rating="1"></div>
                     <div class="drink__header__rating__star" data-rating="2"></div>
