@@ -27,4 +27,5 @@
             {{ $cocktail->name }}
         </span>
     </div>
+    <x-cocktail-rating :drink="$cocktail" />
 </div>

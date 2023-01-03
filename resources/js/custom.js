@@ -80,24 +80,30 @@ function ratingStars() {
 }
 
 function displayRatingStars() {
-    let ratingAvg = parseFloat($(".drink__header__rating__number").text());
-    let stars = $(".drink__header__rating__star");
+    let cocktailRatings = $(".cocktail__rating");
 
-    let intPart = Math.floor(ratingAvg);
-    let decimalPart = ratingAvg - intPart;
-    let roundedDecimalPart = Math.round((decimalPart + Number.EPSILON) * 100) / 100;
-    
-    // Go through each star and if it's less than the average rating, add the active class to that and each prevous star
-    stars.each(function() {
-        if ( $(this).data('rating') <= ratingAvg ) {
-            $(this).addClass('active');
-        }
+    cocktailRatings.each(function() {
 
-        if ( $(this).data('rating') > ratingAvg && $(this).data('rating') < ratingAvg + 1 ) {
-            $(this).append('<div class="drink__header__rating__fill"></div>');
-            let fill = $(this).children().first();
-            fill.css('width', roundedDecimalPart * 100 + '%');
-        }
+        let ratingAvg = parseFloat($(this).children().first().text());
+        let stars = $(this).children().not(':first');
+
+        let intPart = Math.floor(ratingAvg);
+        let decimalPart = ratingAvg - intPart;
+        let roundedDecimalPart = Math.round((decimalPart + Number.EPSILON) * 100) / 100;
+        
+        // Go through each star and if it's less than the average rating, add the active class to that and each prevous star
+        stars.each(function() {
+            if ( $(this).data('rating') <= ratingAvg ) {
+                $(this).addClass('active');
+            }
+
+            if ( $(this).data('rating') > ratingAvg && $(this).data('rating') < ratingAvg + 1 ) {
+                $(this).append('<div class="cocktail__rating__fill"></div>');
+                let fill = $(this).children().first();
+                fill.css('width', roundedDecimalPart * 100 + '%');
+            }
+        });
+
     });
 }
 
