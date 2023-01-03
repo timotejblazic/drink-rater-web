@@ -41,7 +41,7 @@ function accordions() {
     let accordionArrow = accordionTitle.children().last();
     let accordionContent = accordion.children().last();
 
-    accordion.on('click', function() {
+    accordionTitle.on('click', function() {
         accordionContent.toggleClass('active');
         accordionTitle.toggleClass('active');
         accordionArrow.toggleClass('active');
