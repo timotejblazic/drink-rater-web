@@ -61,26 +61,32 @@ class CocktailController extends Controller
     public function orderBy(Request $request) {
         $orderBy = $request->o;
 
-        if($orderBy == 'rating') {
-            return view('drinks', [
-                'drinks' => Cocktail::orderBy('avgRating', 'desc')->get()
-            ]);
-        } else if($orderBy == '_rating') {
-            return view('drinks', [
-                'drinks' => Cocktail::orderBy('avgRating', 'asc')->get()
-            ]);
-        } else if($orderBy == 'name') {
-            return view('drinks', [
-                'drinks' => Cocktail::orderBy('name', 'desc')->get()
-            ]);
-        } else if($orderBy == '_name') {
-            return view('drinks', [
-                'drinks' => Cocktail::orderBy('name', 'asc')->get()
-            ]);
-        } else {
-            return view('drinks', [
-                'drinks' => Cocktail::all()
-            ]);
+        switch($orderBy) {
+            case 'rating':
+                return view('drinks', [
+                    'drinks' => Cocktail::orderBy('avgRating', 'desc')->get()
+                ]);
+                break;
+            case '_rating':
+                return view('drinks', [
+                    'drinks' => Cocktail::orderBy('avgRating', 'asc')->get()
+                ]);
+                break;
+            case 'name':
+                return view('drinks', [
+                    'drinks' => Cocktail::orderBy('name', 'desc')->get()
+                ]);
+                break;
+            case '_name':
+                return view('drinks', [
+                    'drinks' => Cocktail::orderBy('name', 'asc')->get()
+                ]);
+                break;
+            default:
+                return view('drinks', [
+                    'drinks' => Cocktail::all()
+                ]);
+                break;
         }
     }
 }
