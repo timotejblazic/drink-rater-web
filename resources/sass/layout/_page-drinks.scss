@@ -11,6 +11,19 @@
                 @apply w-full;
             }
         }
+        &__ingredients {
+            &__title {
+                @apply text-lg;
+            }
+            &__list {
+                &__item {
+                    &__label {
+                        @apply text-md;
+                    }
+                }
+            }
+        }
+
         &__submit {
             &__button {
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cocktail;
+use App\Models\Ingredient;
 use Illuminate\Http\Request;
 
 class CocktailController extends Controller
@@ -16,13 +17,44 @@ class CocktailController extends Controller
     public function index() {
         return view('drinks', [
             'drinks' => Cocktail::all()->filter(
-                // Filter out drinks that matches query string
+                // Filter out drink that matches query string and checked i (ingredients)
                 function($drink) {
-                    return str_contains(strtolower($drink->name), strtolower(request()->q));
-                }
-                
+                    if(!request()->has('q') && !request()->has('i')) {
+                        return true;
+                    }
 
-            )
+                    if(request()->has('q') && !request()->has('i')) {
+                        return str_contains(strtolower($drink->name), strtolower(request()->q));
+                    }
+
+                    if(!request()->has('q') && request()->has('i')) {
+                        $ingredients = request()->i;
+                        $drinkIngredients = $drink->ingredients->pluck('id')->toArray();
+
+                        foreach($ingredients as $ingredient) {
+                            if(!in_array($ingredient, $drinkIngredients)) {
+                                return false;
+                            }
+                        }
+
+                        return true;
+                    }
+
+                    if(request()->has('q') && request()->has('i')) {
+                        $ingredients = request()->i;
+                        $drinkIngredients = $drink->ingredients->pluck('id')->toArray();
+
+                        foreach($ingredients as $ingredient) {
+                            if(!in_array($ingredient, $drinkIngredients)) {
+                                return false;
+                            }
+                        }
+
+                        return str_contains(strtolower($drink->name), strtolower(request()->q));
+                    }
+                }
+            ),
+            'ingredients' => Ingredient::all()
         ]);
     }
 

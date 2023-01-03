@@ -19,6 +19,17 @@
                         </div>
 
                         <!-- filter by ingredients -->
+                        <div class="drinks__aside__ingredients">
+                            <div class="drinks__aside__ingredients__title">Ingredients</div>
+                            <div class="drinks__aside__ingredients__list">
+                                @foreach ($ingredients as $ingredient)
+                                    <div class="drinks__aside__ingredients__list__item">
+                                        <input type="checkbox" name="i[]" value="{{ $ingredient->id }}" id="ingredient-{{ $ingredient->id }}" class="drinks__aside__ingredients__list__item__checkbox">
+                                        <label for="ingredient-{{ $ingredient->id }}" class="drinks__aside__ingredients__list__item__label">{{ $ingredient->name }}</label>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                         
 
                         <!-- submit button -->
