@@ -28,6 +28,9 @@
             @apply grid grid-cols-2 gap-x-4 gap-y-8;
             @screen xs { @apply grid-cols-3; }
             @screen lg { @apply grid-cols-4; }
+
+            // @apply grid gap-x-4 gap-y-8;
+            // grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
         }
     }
 }

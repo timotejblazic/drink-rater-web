@@ -57,4 +57,30 @@ class CocktailController extends Controller
 
         return redirect()->back();
     }
+
+    public function orderBy(Request $request) {
+        $orderBy = $request->o;
+
+        if($orderBy == 'rating') {
+            return view('drinks', [
+                'drinks' => Cocktail::orderBy('avgRating', 'desc')->get()
+            ]);
+        } else if($orderBy == '_rating') {
+            return view('drinks', [
+                'drinks' => Cocktail::orderBy('avgRating', 'asc')->get()
+            ]);
+        } else if($orderBy == 'name') {
+            return view('drinks', [
+                'drinks' => Cocktail::orderBy('name', 'desc')->get()
+            ]);
+        } else if($orderBy == '_name') {
+            return view('drinks', [
+                'drinks' => Cocktail::orderBy('name', 'asc')->get()
+            ]);
+        } else {
+            return view('drinks', [
+                'drinks' => Cocktail::all()
+            ]);
+        }
+    }
 }

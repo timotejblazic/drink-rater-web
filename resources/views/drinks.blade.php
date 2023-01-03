@@ -27,9 +27,10 @@
                     <div class="dropdown">
                         <div class="dropdown__title">Order By:</div>
                         <div class="dropdown__menu">
-                            <a href="#" class="dropdown__link">Ime</a>
-                            <a href="#" class="dropdown__link">Ocena</a>
-                            <a href="#" class="dropdown__link">Ocena2</a>
+                            <a href="{{ route('drinksOrderBy', 'o=name') }}" class="dropdown__link">Name DESC</a>
+                            <a href="{{ route('drinksOrderBy', 'o=_name') }}" class="dropdown__link">Name ASC</a>
+                            <a href="{{ route('drinksOrderBy', 'o=rating') }}" class="dropdown__link">Rating DESC</a>
+                            <a href="{{ route('drinksOrderBy', 'o=_rating') }}" class="dropdown__link">Rating ASC</a>
                         </div>
                     </div>
                 </div>

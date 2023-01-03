@@ -7,17 +7,17 @@
     }
 
     &__title {
-        @apply text-2xl text-white bg-gray-600 px-3 py-2 rounded;
+        @apply text-lg bg-gray-300 px-3 py-2 rounded;
     }
     &__menu {
-        @apply hidden flex-col absolute top-full left-0 z-10 w-full;
+        @apply hidden flex-col absolute top-full left-0 z-[100] w-full;
         filter: drop-shadow(3px 5px 10px #1B1B1B);
 
         animation: rotateMenu 400ms ease-in-out forwards;
         transform-origin: top center;
     }
     &__link {
-        @apply text-xl p-2 bg-gray-400;
+        @apply p-2 bg-gray-200;
         &:hover {
             @apply bg-gray-300;
         }
