@@ -10,11 +10,15 @@
             <form class="drink__favorite__form favorite__form" method="POST" action="{{ config('app.url', '/') }}/drink/{{ $cocktail->id }}/favorite">
                 @csrf
                 <button class="drink__favorite__form__button favorite__form__button">
-                    @if ($cocktail->favorites()->where('user_id', auth()->user()->id)->exists())
-                        <span class="drink__favorite__form__button__heart favorite__form__button__heart active"></span>
+                    @auth
+                        @if ($cocktail->favorites()->where('user_id', auth()->user()->id)->exists())
+                            <span class="drink__favorite__form__button__heart favorite__form__button__heart active"></span>
+                        @else
+                            <span class="drink__favorite__form__button__heart favorite__form__button__heart"></span>
+                        @endif
                     @else
                         <span class="drink__favorite__form__button__heart favorite__form__button__heart"></span>
-                    @endif
+                    @endauth
                 </button>
             </form>
         </div>
