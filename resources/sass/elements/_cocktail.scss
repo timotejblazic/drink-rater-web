@@ -8,7 +8,7 @@
     }
 
     &__overlay {
-        @apply absolute top-0 left-0 w-full h-full;
+        @apply absolute top-0 left-0 w-full h-full z-50;
     }
 
     &__media {
@@ -19,6 +19,16 @@
     }
 
     &__name {
-        @apply text-center text-lg;
+        @apply flex gap-1 items-center justify-center;
+        &__text {
+            @apply text-center text-lg;
+        }
+
+        &__favorites {
+            @apply relative z-[51];
+            .favorite__form__button__heart {
+                @apply w-[40px] h-[40px];
+            }
+        }
     }
 }
