@@ -9,8 +9,7 @@ class CocktailController extends Controller
 {
     public function top4() {
         return view('home', [
-            // 'drinks' => Cocktail::orderBy('rating', 'desc')->take(4)->get()
-            'drinks' => Cocktail::all()->take(4)
+            'drinks' => Cocktail::orderBy('avgRating', 'desc')->take(4)->get()
         ]);
     }
 
