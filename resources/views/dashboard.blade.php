@@ -54,7 +54,16 @@
                     </div>
 
                     <div class="dashboard__content__item" id="favoriteDrinks">
-                        My favorite drinks content
+                        @if (Auth::user()->favorites->count())
+                            @php
+                                $cocktails = Auth::user()->getFavoriteDrinks();
+                            @endphp
+                            <x-cocktail-grid class="top4__inner" :cocktails="$cocktails" />
+                        @else
+                            <div class="dashboard__content__item__empty">
+                                <i>No favorite drinks yet.</i>
+                            </div>
+                        @endif
                     </div>
 
                     <div class="dashboard__content__item" id="myRatings">

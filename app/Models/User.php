@@ -53,4 +53,13 @@ class User extends Authenticatable implements MustVerifyEmail
     public function favorites() {
         return $this->hasMany(Favorite::class);
     }
+
+    public function getFavoriteDrinks() {
+        $favorites = $this->favorites()->get();
+        $drinks = [];
+        foreach ($favorites as $favorite) {
+            $drinks[] = $favorite->cocktail()->first();
+        }
+        return collect($drinks);
+    }
 }

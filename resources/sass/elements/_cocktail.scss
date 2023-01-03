@@ -12,9 +12,10 @@
     }
 
     &__media {
-        @apply max-w-[200px] mx-auto;
+        aspect-ratio: 2/3;
+        @apply max-w-[200px] mx-auto relative;
         img {
-            @apply w-full h-auto rounded;
+            @apply absolute top-0 left-0 w-full h-full object-cover rounded;
         }
     }
 
