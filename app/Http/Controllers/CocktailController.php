@@ -44,4 +44,18 @@ class CocktailController extends Controller
 
         return redirect()->back();
     }
+
+    public function favorite(Cocktail $drink) {
+        // Check if user has already favorited this drink and remove it from favorites if so
+        if($drink->favorites()->where('user_id', auth()->user()->id)->exists()) {
+            $drink->favorites()->where('user_id', auth()->user()->id)->delete();
+            return redirect()->back();
+        }
+
+        $drink->favorites()->create([
+            'user_id' => auth()->user()->id
+        ]);
+
+        return redirect()->back();
+    }
 }

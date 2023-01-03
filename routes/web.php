@@ -26,6 +26,8 @@ Route::post('/drink/{drink}/comment', [CommentController::class, 'store'])->midd
 
 Route::post('/drink/{drink}/rate', [CocktailController::class, 'rate'])->middleware('verified');
 
+Route::post('/drink/{drink}/favorite', [CocktailController::class, 'favorite'])->middleware('verified');
+
 
 
 

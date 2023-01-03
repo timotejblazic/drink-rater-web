@@ -20,4 +20,8 @@ class Cocktail extends Model
     public function ratings() {
         return $this->hasMany(Rating::class);
     }
+
+    public function favorites() {
+        return $this->hasMany(Favorite::class);
+    }
 }

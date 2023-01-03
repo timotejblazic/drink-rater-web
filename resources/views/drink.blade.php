@@ -46,6 +46,26 @@
             </div>
         </div>
 
+        <div class="drink__favorite">
+            <h2 class="drink__favorite__title">
+                Add this cocktail to your favorites
+            </h2>
+            @auth
+                <form class="drink__favorite__form favorite__form" method="POST" action="{{ config('app.url', '/') }}/drink/{{ $drink->id }}/favorite">
+                    @csrf
+                    <button class="drink__favorite__form__button favorite__form__button">
+                        @if ($drink->favorites()->where('user_id', auth()->user()->id)->exists())
+                            <span class="drink__favorite__form__button__heart favorite__form__button__heart active"></span>
+                        @else
+                            <span class="drink__favorite__form__button__heart favorite__form__button__heart"></span>
+                        @endif
+                    </button>
+                </form>
+            @else
+                <p class="drink__favorite__form__error favorite__form__error">You need to be logged in to favorite a drink.</p>
+            @endauth
+        </div>
+
         <div class="drink__rater">
             <h2 class="drink__rater__title">
                 Rate this cocktail

@@ -39,6 +39,10 @@
         }
     }
 
+    &__favorite {
+        @apply flex flex-col gap-2 mt-8;
+    }
+
     &__rater {
         @apply flex flex-col gap-2 mt-8;
     }

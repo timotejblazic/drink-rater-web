@@ -49,4 +49,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function ratings() {
         return $this->hasMany(Rating::class);
     }
+
+    public function favorites() {
+        return $this->hasMany(Favorite::class);
+    }
 }

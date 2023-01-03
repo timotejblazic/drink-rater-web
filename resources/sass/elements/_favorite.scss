@@ -1,0 +1,13 @@
+.favorite {
+    &__form {
+        &__button {
+            &__heart {
+                @apply block w-[50px] h-[50px] bg-[url("../../public/images/svgs/favorite-heart-empty.svg")] bg-no-repeat bg-contain bg-center;
+
+                &.active {
+                    @apply bg-[url("../../public/images/svgs/favorite-heart-full.svg")];
+                }
+            }
+        }
+    }
+}
