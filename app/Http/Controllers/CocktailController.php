@@ -15,7 +15,14 @@ class CocktailController extends Controller
 
     public function index() {
         return view('drinks', [
-            'drinks' => Cocktail::all()
+            'drinks' => Cocktail::all()->filter(
+                // Filter out drinks that matches query string
+                function($drink) {
+                    return str_contains(strtolower($drink->name), strtolower(request()->q));
+                }
+                
+
+            )
         ]);
     }
 

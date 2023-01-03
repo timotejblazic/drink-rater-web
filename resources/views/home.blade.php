@@ -27,6 +27,28 @@
         </div>
     </div>
 
+    <div class="search">
+        <h1 class="search__title">Search for specific cocktail</h1>
+        <div class="search__wrap">
+            <!-- form for searching specific drink by name -->
+            <form action="{{ route('drinks') }}" method="GET" class="search__form">
+
+                <!-- search keywords -->
+                <div class="search__form__search">
+                    <input type="text" name="q" placeholder="Search drink..." class="search__form__search__input">
+                </div>
+                
+                <!-- submit button -->
+                <div class="search__form__submit">
+                    <button type="submit" class="search__form__submit__button">
+                        <span class="search__form__submit__button__icon"></span>
+                    </button>
+                </div>
+            
+            </form>
+        </div>
+    </div>
+
     <div class="top4">
         <div class="top4__description">
             <h1 class="top4__description__title">Best Rated Cocktails</h1>

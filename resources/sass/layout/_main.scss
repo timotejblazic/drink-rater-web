@@ -54,6 +54,35 @@
     }
 }
 
+.search {
+    @apply mt-4 px-2;
+    &__form {
+        @apply flex items-center max-w-[600px] w-full;
+        &__search {
+            @apply flex-grow;
+            &__input {
+                @apply w-full;
+            }
+        }
+        &__submit {
+            @apply h-[42px];
+            &__button {
+                @apply bg-blue-500 h-full px-3;
+                @apply transition-all duration-300;
+                &__icon {
+                    @apply block w-[30px] h-[30px] bg-[url("../../public/images/svgs/search-icon.svg")] bg-contain bg-center bg-no-repeat;
+                    svg {
+                        fill: #fff;
+                    }
+                }
+                &:hover {
+                    @apply bg-blue-600;
+                }
+            }
+        }
+    }
+}
+
 .registerinfo {
     @apply mt-4 px-2;
     &__title {

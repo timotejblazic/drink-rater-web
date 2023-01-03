@@ -3,6 +3,19 @@
     @screen lg { @apply flex-row gap-8; }
     &__aside {
         @screen lg { @apply max-w-[350px] flex-grow; }
+        &__form {
+            @apply flex flex-col gap-4 p-4;
+        }
+        &__search {
+            &__input {
+                @apply w-full;
+            }
+        }
+        &__submit {
+            &__button {
+
+            }
+        }
     }
 
     &__main {

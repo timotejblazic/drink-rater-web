@@ -11,7 +11,22 @@
                     <span class="accordion__title__arrow"></span>
                 </a>
                 <div class="accordion__content">
-                    This is accordion content
+                    <!-- form for searching specific drink by name -->
+                    <form action="{{ route('drinks') }}" method="GET" class="drinks__aside__form">
+                        <!-- search keywords -->
+                        <div class="drinks__aside__search">
+                            <input type="text" name="q" placeholder="Search drink..." class="drinks__aside__search__input">
+                        </div>
+
+                        <!-- filter by ingredients -->
+                        
+
+                        <!-- submit button -->
+                        <div class="drinks__aside__submit">
+                            <button type="submit" class="drinks__aside__submit__button button button__primary">Confirm</button>
+                        </div>
+                        
+                    </form>
                 </div>
             </div>
         </aside>
