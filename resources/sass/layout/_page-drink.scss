@@ -17,8 +17,12 @@
         @screen xs { @apply flex-row gap-8; }
     }
     &__media {
-        @apply mx-auto;
+        aspect-ratio: 2/3;
+        @apply mx-auto relative w-[200px] max-w-[200px];
         @screen xs { @apply mx-0; }
+        > img {
+            @apply absolute top-0 left-0 w-full h-full object-cover;
+        }
     }
     &__description {
         @apply text-lg;

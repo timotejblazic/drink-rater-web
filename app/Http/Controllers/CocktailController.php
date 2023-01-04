@@ -142,8 +142,11 @@ class CocktailController extends Controller
             'description' => request()->description,
             'image' => request()->image->store('cocktails', 'public')
         ]);
-        
-        $drink->ingredients()->attach(request()->ingredients);
+
+        // Get ingredient from id and find instance of model
+        $ingredientCollection = Ingredient::find(request()->ingredient);
+        $drink->ingredients()->attach($ingredientCollection);
+        $drink->save();
 
         return redirect()->route('drinks');
     }

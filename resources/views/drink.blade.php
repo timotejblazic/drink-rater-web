@@ -20,7 +20,7 @@
 
         <div class="drink__info">
             <div class="drink__media">
-                <img src="{{ asset('images/cocktails/' . $drink->image) }}" alt="drink" width="200" height="250">
+                <img src="{{ asset('storage/') }}/{{ $drink->image }}" alt="drink" width="200" height="250">
             </div>
             <div class="drink__description">
                 <h2 class="drink__description__title">{{ $drink->name }}</h2>

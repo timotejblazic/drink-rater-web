@@ -38,7 +38,7 @@
                         <div class="drinkadd__form__checkbox__wrap">
                             @foreach ($ingredients as $ingredient)
                                 <div class="drinkadd__form__checkbox__item">
-                                    <input type="checkbox" name="ingredient[]" id="ingredient-{{ $ingredient->id }}" class="drinkadd__form__checkbox__input">
+                                    <input type="checkbox" name="ingredient[]" id="ingredient-{{ $ingredient->id }}" value="{{ $ingredient->id }}" class="drinkadd__form__checkbox__input">
                                     <label for="ingredient-{{ $ingredient->id }}" class="drinkadd__form__checkbox__label">{{ $ingredient->name }}</label>
                                 </div>
                             @endforeach
