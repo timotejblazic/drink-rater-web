@@ -9,6 +9,10 @@ class Ingredient extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+    ];
+
     public $timestamps = false;
 
     public function cocktails() {

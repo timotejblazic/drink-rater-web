@@ -9,6 +9,15 @@ class Cocktail extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'instructions',
+        'image',
+        'avgRating',
+        'user_id'
+    ];
+
     public function comments() {
         return $this->hasMany(Comment::class);
     }

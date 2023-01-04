@@ -121,4 +121,43 @@ class CocktailController extends Controller
 
         return redirect()->back();
     }
+
+    public function drinkAddIndex() {
+        return view('drinkadd', [
+            'ingredients' => Ingredient::all()
+        ]);
+    }
+
+    public function drinkAddStore() {
+        // Validate input data
+        request()->validate([
+            'name' => 'required',
+            'ingredient' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,jpg,png,gif,webp|max:2048'
+        ]);
+
+        $drink = Cocktail::create([
+            'name' => request()->name,
+            'description' => request()->description,
+            'image' => request()->image->store('cocktails', 'public')
+        ]);
+        
+        $drink->ingredients()->attach(request()->ingredients);
+
+        return redirect()->route('drinks');
+    }
+
+    public function drinkAddStoreIngredient() {
+        // Validate input data
+        request()->validate([
+            'name' => 'required'
+        ]);
+
+        Ingredient::create([
+            'name' => request()->name
+        ]);
+
+        return redirect()->back();
+    }
 }

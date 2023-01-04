@@ -1,0 +1,25 @@
+.drinkadd {
+    @apply max-w-[600px] mx-auto px-4;
+    &__main {
+        
+    }
+    &__title {
+
+    }
+    &__form {
+        @apply flex flex-col gap-8;
+        &__item {
+            @apply flex flex-col gap-2;
+            &__error {
+                @apply text-red-500;
+            }
+        }
+        &__checkbox {
+            @apply flex flex-col gap-2;
+            &__item {
+                @apply flex items-center gap-2;
+                
+            }
+        }
+    }
+}
