@@ -15,45 +15,70 @@ class CocktailController extends Controller
     }
 
     public function index() {
-        return view('drinks', [
-            'drinks' => Cocktail::all()->filter(
-                // Filter out drink that matches query string and checked i (ingredients)
-                function($drink) {
-                    if(!request()->has('q') && !request()->has('i')) {
-                        return true;
-                    }
-
-                    if(request()->has('q') && !request()->has('i')) {
-                        return str_contains(strtolower($drink->name), strtolower(request()->q));
-                    }
-
-                    if(!request()->has('q') && request()->has('i')) {
-                        $ingredients = request()->i;
-                        $drinkIngredients = $drink->ingredients->pluck('id')->toArray();
-
-                        foreach($ingredients as $ingredient) {
-                            if(!in_array($ingredient, $drinkIngredients)) {
-                                return false;
-                            }
-                        }
-
-                        return true;
-                    }
-
-                    if(request()->has('q') && request()->has('i')) {
-                        $ingredients = request()->i;
-                        $drinkIngredients = $drink->ingredients->pluck('id')->toArray();
-
-                        foreach($ingredients as $ingredient) {
-                            if(!in_array($ingredient, $drinkIngredients)) {
-                                return false;
-                            }
-                        }
-
-                        return str_contains(strtolower($drink->name), strtolower(request()->q));
-                    }
+        $drinks = Cocktail::all()->filter(
+            // Filter out drink that matches query string and checked i (ingredients)
+            function($drink) {
+                if(!request()->has('q') && !request()->has('i')) {
+                    return true;
                 }
-            ),
+
+                if(request()->has('q') && !request()->has('i')) {
+                    return str_contains(strtolower($drink->name), strtolower(request()->q));
+                }
+
+                if(!request()->has('q') && request()->has('i')) {
+                    $ingredients = request()->i;
+                    $drinkIngredients = $drink->ingredients->pluck('id')->toArray();
+
+                    foreach($ingredients as $ingredient) {
+                        if(!in_array($ingredient, $drinkIngredients)) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+
+                if(request()->has('q') && request()->has('i')) {
+                    $ingredients = request()->i;
+                    $drinkIngredients = $drink->ingredients->pluck('id')->toArray();
+
+                    foreach($ingredients as $ingredient) {
+                        if(!in_array($ingredient, $drinkIngredients)) {
+                            return false;
+                        }
+                    }
+
+                    return str_contains(strtolower($drink->name), strtolower(request()->q));
+                }
+            }
+        );
+
+        // Check if orderBy query string is set and order drinks accordingly
+        if (request()->has('o')) {
+            $orderBy = request()->o;
+
+            switch($orderBy) {
+                case 'rating':
+                    $drinks = $drinks->sortByDesc('avgRating');
+                    break;
+                case '_rating':
+                    $drinks = $drinks->sortBy('avgRating');
+                    break;
+                case 'name':
+                    $drinks = $drinks->sortByDesc('name');
+                    break;
+                case '_name':
+                    $drinks = $drinks->sortBy('name');
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+        return view('drinks', [
+            'drinks' => $drinks,
             'ingredients' => Ingredient::all()
         ]);
     }
@@ -95,37 +120,5 @@ class CocktailController extends Controller
         ]);
 
         return redirect()->back();
-    }
-
-    public function orderBy(Request $request) {
-        $orderBy = $request->o;
-
-        switch($orderBy) {
-            case 'rating':
-                return view('drinks', [
-                    'drinks' => Cocktail::orderBy('avgRating', 'desc')->get()
-                ]);
-                break;
-            case '_rating':
-                return view('drinks', [
-                    'drinks' => Cocktail::orderBy('avgRating', 'asc')->get()
-                ]);
-                break;
-            case 'name':
-                return view('drinks', [
-                    'drinks' => Cocktail::orderBy('name', 'desc')->get()
-                ]);
-                break;
-            case '_name':
-                return view('drinks', [
-                    'drinks' => Cocktail::orderBy('name', 'asc')->get()
-                ]);
-                break;
-            default:
-                return view('drinks', [
-                    'drinks' => Cocktail::all()
-                ]);
-                break;
-        }
     }
 }

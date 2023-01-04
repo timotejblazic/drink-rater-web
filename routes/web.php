@@ -20,7 +20,6 @@ use Illuminate\Http\Request;
 Route::get('/', [CocktailController::class, 'top4'])->name('home');
 
 Route::get('/drinks', [CocktailController::class, 'index'])->name('drinks');
-Route::get('/drinks/orderBy', [CocktailController::class, 'orderBy'])->name('drinksOrderBy');
 
 Route::get('/drink/{drink}', [CocktailController::class, 'show'])->name('drink');
 Route::post('/drink/{drink}/comment', [CommentController::class, 'store'])->middleware('verified');
