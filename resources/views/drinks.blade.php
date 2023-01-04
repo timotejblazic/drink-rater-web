@@ -13,9 +13,15 @@
                 <div class="accordion__content">
                     <!-- form for searching specific drink by name -->
                     <form action="{{ route('drinks') }}" method="GET" class="drinks__aside__form">
+                        <!-- if there is get parameter 'o', put it in hidden input -->
+                        @if (request()->has('o'))
+                            <input type="hidden" name="o" value="{{ request()->o }}">
+                        @endif
+
                         <!-- search keywords -->
                         <div class="drinks__aside__search">
-                            <input type="text" name="q" placeholder="Search drink..." class="drinks__aside__search__input">
+                            <input type="text" name="q" placeholder="Search drink..." class="drinks__aside__search__input"
+                                value="{{ request()->has('q') ? request()->q : '' }}">
                         </div>
 
                         <!-- filter by ingredients -->
@@ -24,7 +30,13 @@
                             <div class="drinks__aside__ingredients__list">
                                 @foreach ($ingredients as $ingredient)
                                     <div class="drinks__aside__ingredients__list__item">
-                                        <input type="checkbox" name="i[]" value="{{ $ingredient->id }}" id="ingredient-{{ $ingredient->id }}" class="drinks__aside__ingredients__list__item__checkbox">
+                                        <input type="checkbox"
+                                            name="i[]"
+                                            value="{{ $ingredient->id }}" 
+                                            id="ingredient-{{ $ingredient->id }}"
+                                            class="drinks__aside__ingredients__list__item__checkbox"
+                                            {{ request()->has('i') && in_array($ingredient->id, request()->i) ? 'checked' : ''}}
+                                            >
                                         <label for="ingredient-{{ $ingredient->id }}" class="drinks__aside__ingredients__list__item__label">{{ $ingredient->name }}</label>
                                     </div>
                                 @endforeach
@@ -51,12 +63,16 @@
                 </div>
                 <div class="drinks__list__header__order">
                     <div class="dropdown">
+                        @php
+                            $search = request()->has('q') ? request()->q : '';
+                            $ingredients = request()->has('i') ? request()->i : [];
+                        @endphp
                         <div class="dropdown__title">Order By:</div>
                         <div class="dropdown__menu">
-                            <a href="{{ route('drinks', 'o=name') }}" class="dropdown__link">Name DESC</a>
-                            <a href="{{ route('drinks', 'o=_name') }}" class="dropdown__link">Name ASC</a>
-                            <a href="{{ route('drinks', 'o=rating') }}" class="dropdown__link">Rating DESC</a>
-                            <a href="{{ route('drinks', 'o=_rating') }}" class="dropdown__link">Rating ASC</a>
+                            <a href="{{ route('drinks', ['o'=>'name', 'q'=>$search, 'i'=>$ingredients]) }}" class="dropdown__link">Name DESC</a>
+                            <a href="{{ route('drinks', ['o'=>'_name', 'q'=>$search, 'i'=>$ingredients]) }}" class="dropdown__link">Name ASC</a>
+                            <a href="{{ route('drinks', ['o'=>'rating', 'q'=>$search, 'i'=>$ingredients]) }}" class="dropdown__link">Rating DESC</a>
+                            <a href="{{ route('drinks', ['o'=>'_rating', 'q'=>$search, 'i'=>$ingredients]) }}" class="dropdown__link">Rating ASC</a>
                         </div>
                     </div>
                 </div>
