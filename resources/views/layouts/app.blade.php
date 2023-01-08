@@ -8,7 +8,7 @@
         <title>{{ $pageTitle }}</title>
 
         <!-- Scripts -->
-        @vite(['resources/js/app.js', 'resources/js/custom.js'])
+        @vite(['resources/js/app.js'])
     </head>
     <body class="body">
         <div class="body__inner">
