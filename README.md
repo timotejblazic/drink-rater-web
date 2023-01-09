@@ -7,3 +7,4 @@
 4. nekak lepš nardit dodajanje ratinga pa komentarjov
 5. admin role( dodajanje pijač, brisanje tujih komentarjev )
 6. brisanje svojega komentarja
+7. ura pri komentarjih ni GMT+1
