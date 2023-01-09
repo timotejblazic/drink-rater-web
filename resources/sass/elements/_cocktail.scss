@@ -39,7 +39,9 @@
             @apply hidden;
         }
         &__star {
-            @apply w-[30px] h-[30px] bg-[url("../../public/images/svgs/rating-star-empty.svg")] bg-no-repeat bg-contain bg-center;
+            aspect-ratio: 1/1;
+            width: 30px;
+            @apply bg-[url("../../public/images/svgs/rating-star-empty.svg")] bg-no-repeat bg-contain bg-center;
             &.active {
                 @apply bg-[url("../../public/images/svgs/rating-star-active.svg")];
             }
