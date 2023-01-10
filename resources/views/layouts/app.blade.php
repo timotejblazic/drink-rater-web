@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <meta name="description" content="Create account and login to check and rate all of Parlament's drinks. Leave a comment and add drinks to your personal collection.">
+
         <title>{{ $pageTitle }}</title>
 
         <!-- Scripts -->
@@ -21,7 +23,9 @@
             <header class="header">
                 <div class="header__inner">
                     <div class="header__left">
-                        <a href="{{ URL::to('/') }}">LOGO</a>
+                        <a class="header__left__link" href="{{ route('home') }}">
+                            <img class="header__left__image" src="{{ asset('images/logo/logo-text-lg.png') }}" alt="logo">
+                        </a>
                     </div>
                     <div class="header__right">
 
@@ -33,7 +37,7 @@
                                 <a href="{{ route('drinks') }}" class="nav__link">All Drinks</a>
                             </div>
                             <div class="nav__item">
-                                <a href="#" class="nav__link">Favorited Drinks</a>
+                                <a href="{{ route('dashboard') }}" class="nav__link">Favorites</a>
                             </div>
                         </nav>
 
@@ -41,7 +45,8 @@
                         <div class="user-nav dropdown-click">
                             <div class="dropdown__first">
                                 <div class="dropdown__first__icon">
-                                    <img src="{{ asset('images/svgs/user.svg') }}" alt="user" width="40" height="40">
+                                    <img class="dropdown__first__icon__user" src="{{ asset('images/svgs/user.svg') }}" alt="user" width="40" height="40">
+                                    <img class="dropdown__first__icon__arrow" src="{{ asset('images/svgs/arrow-down.svg') }}" alt="user" width="40" height="40">
                                 </div>
                                 @auth
                                     <div class="dropdown__first__title">
@@ -88,7 +93,7 @@
                                 <a href="{{ route('drinks') }}" class="nav__link">All Drinks</a>
                             </div>
                             <div class="nav__item">
-                                <a href="#" class="nav__link">Favorited Drinks</a>
+                                <a href="{{ route('dashboard') }}" class="nav__link">Favorites</a>
                             </div>
                         </nav>
                     </div>
@@ -108,10 +113,10 @@
             <footer class="footer">
                 <div class="footer__inner">
                     <div class="footer__copyright">
-                        Copyright 2022
+                        &copy; {{ date('Y') }} {{ config('app.name') }}
                     </div>
                     <div class="footer__contact">
-                        Contact us: john@example.com
+                        Contact us: <a href="mailto:drink.raters@gmail.com">drink.raters@gmail.com</a>
                     </div>
                 </div>
             </footer>

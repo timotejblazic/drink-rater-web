@@ -25,7 +25,8 @@
         }
 
         &__heading {
-            @apply text-4xl;
+            @apply text-3xl;
+            @screen md { @apply text-4xl;}
         }
         &__body {
             @apply text-lg mt-4;
@@ -36,13 +37,27 @@
     }
 }
 
+.advantages {
+    &__items {
+        @apply grid gap-4 mt-4;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+    &__item {
+        @apply flex flex-col gap-1 items-center;
+        max-width: 200px;
+        margin: 0 auto;
+        &__icon {
+
+        }
+        &__content {
+            @apply text-center;
+        }
+    }
+}
+
 .top4 {
-    @apply mt-4 px-2;
     &__description {
         @apply mb-4;
-        &__title {
-            @apply text-2xl;
-        }
         &__links {
             @apply mt-2;
         }
@@ -55,7 +70,6 @@
 }
 
 .search {
-    @apply mt-4 px-2;
     &__form {
         @apply flex items-center max-w-[600px] w-full;
         &__search {
@@ -80,21 +94,5 @@
                 }
             }
         }
-    }
-}
-
-.registerinfo {
-    @apply mt-4 px-2;
-    &__title {
-        @apply text-2xl;
-    }
-    &__body {
-        @apply mt-4;
-        ul {
-            @apply list-disc pl-8;
-        }
-    }
-    &__links {
-        @apply mt-2;
     }
 }

@@ -4,6 +4,14 @@
     
     &__inner {
         @apply container m-auto;
-        @apply flex justify-between py-4;
+        @apply flex justify-between flex-wrap gap-4 py-4 px-2;
+    }
+    &__contact {
+        a {
+            @apply italic underline text-blue-400;
+            &:hover {
+                @apply no-underline;
+            }
+        }
     }
 }

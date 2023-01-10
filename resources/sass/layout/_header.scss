@@ -1,12 +1,19 @@
 .header {
     @apply bg-white shadow;
     @apply sticky top-0 z-[100];
+    @apply border-b-4 border-gray-300;
     &__inner {
-        @apply max-w-7xl mx-auto py-6 px-4;
-        @apply flex;
+        @apply flex max-w-7xl mx-auto px-1;
+        @screen md {
+            @apply py-6 px-4;
+        }
     }
     &__left {
         @apply max-w-[200px] w-full;
+        &__image {
+            @apply p-2;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
     }
     &__right {
         @apply flex justify-end items-center w-full;
@@ -44,12 +51,18 @@
         @apply absolute top-0 right-0 w-0 h-auto max-w-lg overflow-hidden bg-red-200 z-10;
         @apply flex flex-col gap-4 items-center pt-16;
         @apply transition-all duration-700 ease-in-out;
+        // @apply translate-x-full;
         &.active {
             @apply w-full;
+            // @apply translate-x-0;
+            .nav__item {
+                @apply opacity-100;
+            }
         }
 
         .nav__item {
-
+            @apply transition-all duration-700;
+            @apply opacity-0;
         }
         .nav__link {
             @apply text-xl uppercase;

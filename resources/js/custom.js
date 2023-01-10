@@ -114,10 +114,12 @@ function dropdown() {
     let dropdown = $('.dropdown-click');
     let dropdownTitle = dropdown.children().first();
     let dropdownContent = dropdown.children().last();
+    let dropdownArrow = dropdownTitle.children().first().children().last();
 
     dropdown.on('click', function() {
         dropdownContent.toggleClass('active');
         dropdownTitle.toggleClass('active');
+        dropdownArrow.toggleClass('active');
     });
 
     // Close dropdown if clicked outside of it
@@ -125,6 +127,7 @@ function dropdown() {
         if ( !$(event.target).closest(dropdown).length ) {
             dropdownContent.removeClass('active');
             dropdownTitle.removeClass('active');
+            dropdownArrow.removeClass('active');
         }
     });
 }

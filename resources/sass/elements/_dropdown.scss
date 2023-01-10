@@ -30,11 +30,27 @@
     @apply relative cursor-pointer;
     .dropdown__first {
         @apply flex items-center gap-2;
+        &__icon {
+            
+            @apply flex;
+            &__user {
+                min-width: 30px;
+            }
+            &__arrow {
+                width: 20px;
+                @apply transition-all duration-300;
+                &.active {
+                    @apply rotate-180;
+                }
+            }
+        }
         &__title {
-            @apply text-sm;
+            @apply hidden text-sm;
+            @screen xs { @apply block; }
             div:last-child {
                 @apply italic;
             }
+           
         }
         &.active {
 

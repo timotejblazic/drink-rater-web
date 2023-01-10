@@ -17,19 +17,20 @@
         img {
             @apply absolute top-0 left-0 w-full h-full object-cover rounded;
         }
+
+        &__favorites {
+            background-color: rgba(255, 255, 255, 0.5);
+            @apply absolute top-0 left-0 z-[51] rounded-br;
+            .favorite__form__button__heart {
+                @apply w-[40px] h-[40px];
+            }
+        }
     }
 
     &__name {
         @apply flex gap-1 items-center justify-center;
         &__text {
             @apply text-center text-lg;
-        }
-
-        &__favorites {
-            @apply relative z-[51];
-            .favorite__form__button__heart {
-                @apply w-[40px] h-[40px];
-            }
         }
     }
 

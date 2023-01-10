@@ -21,14 +21,51 @@
                 </div>
                 <div class="promo__content__links">
                     <a href="{{ route('drinks') }}" class="button button__primary">All Drinks</a>
-                    <a href="{{ route('login') }}" class="button button__secondary">Login</a>
+                    @auth
+                        <a href="{{ route('dashboard') }}" class="button button__secondary">Favorites</a>
+                    @else
+                        <a href="{{ route('register') }}" class="button button__secondary">Register</a>
+                    @endauth
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="search">
-        <h1 class="search__title">Search for specific cocktail</h1>
+    <div class="advantages section">
+        <h3 class="advantages__description__title">Join the community</h3>
+        <div class="advantages__items">
+            <div class="advantages__item">
+                <div class="advantages__item__icon">
+                    <img src="{{ asset('images/svgs/rating-star-empty.svg') }}" alt="advantages1" width="40" height="40">
+                </div>
+                <div class="advantages__item__content">
+                    Rate every drink you've tried. Good or bad.
+                </div>
+            </div>
+
+            <div class="advantages__item">
+                <div class="advantages__item__icon">
+                    <img src="{{ asset('images/svgs/comment.svg') }}" alt="advantages1" width="40" height="40">
+                </div>
+                <div class="advantages__item__content">
+                    Leave comments and share your experience.
+                </div>
+            </div>
+
+            <div class="advantages__item">
+                <div class="advantages__item__icon">
+                    <img src="{{ asset('images/svgs/favorite-heart-empty.svg') }}" alt="advantages1" width="40" height="40">
+                </div>
+                <div class="advantages__item__content">
+                    Save your favorite drinks and check them out anytime.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="search section">
+        <h3 class="search__title">Search for specific cocktail</h3>
         <div class="search__wrap">
             <!-- form for searching specific drink by name -->
             <form action="{{ route('drinks') }}" method="GET" class="search__form">
@@ -49,9 +86,9 @@
         </div>
     </div>
 
-    <div class="top4">
+    <div class="top4 section">
         <div class="top4__description">
-            <h1 class="top4__description__title">Best Rated Cocktails</h1>
+            <h3 class="top4__description__title">Best Rated Cocktails</h3>
             <div class="top4__description__body">
                 Check out four best rated cocktails!
             </div>
@@ -62,19 +99,5 @@
 
         <x-cocktail-grid class="top4__inner" :cocktails="$drinks" />
         
-    </div>
-
-    <div class="registerinfo">
-        <h1 class="registerinfo__title">Sign up</h1>
-        <div class="registerinfo__body">
-            When you sign up, you will be able to:
-            <ul>
-                <li>Rate cocktails</li>
-                <li>Save cocktails to your personal collection</li>
-            </ul>
-        </div>
-        <div class="registerinfo__links">
-            <a href="{{ config('app.url', '/') }}/login" class="button button__primary">Login</a>
-        </div>
     </div>
 </x-app-layout>
