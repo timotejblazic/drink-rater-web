@@ -54,6 +54,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Favorite::class);
     }
 
+    public function role() {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function isAdmin() {
+        return $this->role()->first()->name === 'admin';
+    }
+
     public function getFavoriteDrinks() {
         $favorites = $this->favorites()->get();
         $drinks = [];

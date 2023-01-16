@@ -27,9 +27,9 @@ Route::post('/drink/{drink}/rate', [CocktailController::class, 'rate'])->middlew
 Route::post('/drink/{drink}/favorite', [CocktailController::class, 'favorite'])->middleware('verified');
 
 // Add drinks and ingredients
-Route::get('/drinkadd', [CocktailController::class, 'drinkAddIndex'])->middleware('auth')->name('drinkadd');
-Route::post('/drinkadd', [CocktailController::class, 'drinkAddStore'])->middleware('auth')->name('drinkadd');
-Route::post('/drinkadd/ingredient', [CocktailController::class, 'drinkAddStoreIngredient'])->middleware('auth')->name('drinkaddIngredient');
+Route::get('/drinkadd', [CocktailController::class, 'drinkAddIndex'])->middleware('admin')->name('drinkadd');
+Route::post('/drinkadd', [CocktailController::class, 'drinkAddStore'])->middleware('admin')->name('drinkadd');
+Route::post('/drinkadd/ingredient', [CocktailController::class, 'drinkAddStoreIngredient'])->middleware('admin')->name('drinkaddIngredient');
 
 
 
