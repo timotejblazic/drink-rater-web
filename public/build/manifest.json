@@ -3,6 +3,10 @@
     "file": "assets/arrow-down.a172239a.svg",
     "src": "public/images/svgs/arrow-down.svg"
   },
+  "public/images/svgs/rating-star-empty.svg": {
+    "file": "assets/rating-star-empty.34c79e79.svg",
+    "src": "public/images/svgs/rating-star-empty.svg"
+  },
   "public/images/svgs/search-icon.svg": {
     "file": "assets/search-icon.d172078c.svg",
     "src": "public/images/svgs/search-icon.svg"
@@ -10,10 +14,6 @@
   "public/images/svgs/rating-star-active.svg": {
     "file": "assets/rating-star-active.e158f9d6.svg",
     "src": "public/images/svgs/rating-star-active.svg"
-  },
-  "public/images/svgs/rating-star-empty.svg": {
-    "file": "assets/rating-star-empty.34c79e79.svg",
-    "src": "public/images/svgs/rating-star-empty.svg"
   },
   "public/images/svgs/favorite-heart-full.svg": {
     "file": "assets/favorite-heart-full.355c441b.svg",
@@ -24,11 +24,11 @@
     "src": "public/images/svgs/favorite-heart-empty.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app.f7b8fe43.js",
+    "file": "assets/app.df922e1a.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app.45781670.css"
+      "assets/app.d8981f1f.css"
     ],
     "assets": [
       "assets/search-icon.d172078c.svg",
@@ -40,7 +40,7 @@
     ]
   },
   "resources/js/app.css": {
-    "file": "assets/app.45781670.css",
+    "file": "assets/app.d8981f1f.css",
     "src": "resources/js/app.css"
   }
 }

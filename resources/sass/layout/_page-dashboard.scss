@@ -9,6 +9,10 @@
             }
         }
     }
+    &__admin {
+        @apply mt-6;
+    }
+
     &__body {
         @apply flex flex-col gap-8 mt-8;
         @screen md {

@@ -8,6 +8,11 @@
             <div class="dashboard__header white-box">
                 <h3 class="dashboard__header__title">Welcome to your profile, <span>{{ Auth::user()->name }}</span>!</h3>
             </div>
+            @if (Auth::user()->isAdmin())
+            <div class="dashboard__admin white-box">
+                <a href="{{ route('drinkadd') }}" class="dashboard__admin__link button button__primary">Add Drinks</a>
+            </div>
+            @endif
             <div class="dashboard__body">
                 <div class="dashboard__nav">
                     <div class="dashboard__nav__item active">
