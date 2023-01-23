@@ -9,3 +9,4 @@
 6. brisanje svojega komentarja
 7. ura pri komentarjih ni GMT+1
 8. filtriranje po barvah
+9. v migracijo dodaj, da takoj insertaš role... da se lahko da takoj default role
