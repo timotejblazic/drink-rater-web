@@ -17,6 +17,16 @@
         <meta name="theme-color" content="#6777ef"/>
         <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
         <link rel="manifest" href="{{ asset('/manifest.json') }}">
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GL42924GPM"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-GL42924GPM');
+        </script>
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">

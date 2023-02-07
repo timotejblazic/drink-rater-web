@@ -1,8 +1,4 @@
 {
-  "public/images/svgs/arrow-down.svg": {
-    "file": "assets/arrow-down.a172239a.svg",
-    "src": "public/images/svgs/arrow-down.svg"
-  },
   "public/images/svgs/rating-star-empty.svg": {
     "file": "assets/rating-star-empty.34c79e79.svg",
     "src": "public/images/svgs/rating-star-empty.svg"
@@ -15,13 +11,17 @@
     "file": "assets/rating-star-active.e158f9d6.svg",
     "src": "public/images/svgs/rating-star-active.svg"
   },
-  "public/images/svgs/favorite-heart-full.svg": {
-    "file": "assets/favorite-heart-full.355c441b.svg",
-    "src": "public/images/svgs/favorite-heart-full.svg"
+  "public/images/svgs/arrow-down.svg": {
+    "file": "assets/arrow-down.a172239a.svg",
+    "src": "public/images/svgs/arrow-down.svg"
   },
   "public/images/svgs/favorite-heart-empty.svg": {
     "file": "assets/favorite-heart-empty.7e96b3ff.svg",
     "src": "public/images/svgs/favorite-heart-empty.svg"
+  },
+  "public/images/svgs/favorite-heart-full.svg": {
+    "file": "assets/favorite-heart-full.355c441b.svg",
+    "src": "public/images/svgs/favorite-heart-full.svg"
   },
   "resources/js/app.js": {
     "file": "assets/app.df922e1a.js",
