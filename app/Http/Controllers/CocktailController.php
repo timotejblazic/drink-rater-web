@@ -124,7 +124,7 @@ class CocktailController extends Controller
 
     public function drinkAddIndex() {
         return view('drinkadd', [
-            'ingredients' => Ingredient::all()
+            'ingredients' => Ingredient::all(),
         ]);
     }
 
@@ -149,18 +149,5 @@ class CocktailController extends Controller
         $drink->save();
 
         return redirect()->route('drinks');
-    }
-
-    public function drinkAddStoreIngredient() {
-        // Validate input data
-        request()->validate([
-            'name' => 'required'
-        ]);
-
-        Ingredient::create([
-            'name' => request()->name
-        ]);
-
-        return redirect()->back();
     }
 }

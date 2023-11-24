@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CocktailController;
+use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Cocktail;
@@ -29,7 +30,8 @@ Route::post('/drink/{drink}/favorite', [CocktailController::class, 'favorite'])-
 // Add drinks and ingredients
 Route::get('/drinkadd', [CocktailController::class, 'drinkAddIndex'])->middleware('admin')->name('drinkadd');
 Route::post('/drinkadd', [CocktailController::class, 'drinkAddStore'])->middleware('admin')->name('drinkadd');
-Route::post('/drinkadd/ingredient', [CocktailController::class, 'drinkAddStoreIngredient'])->middleware('admin')->name('drinkaddIngredient');
+Route::get('/ingredient', [IngredientController::class, 'index'])->middleware('admin')->name('ingredient');
+Route::post('/ingredient/add', [IngredientController::class, 'add'])->middleware('admin');
 
 
 

@@ -11,6 +11,7 @@
             @if (Auth::user()->isAdmin())
             <div class="dashboard__admin white-box">
                 <a href="{{ route('drinkadd') }}" class="dashboard__admin__link button button__primary">Add Drinks</a>
+                <a href="{{ route('ingredient') }}" class="dashboard__admin__link button button__primary">Add Ingredients</a>
             </div>
             @endif
             <div class="dashboard__body">

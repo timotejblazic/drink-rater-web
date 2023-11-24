@@ -1,19 +1,19 @@
 {
-  "public/images/svgs/search-icon.svg": {
-    "file": "assets/search-icon.d172078c.svg",
-    "src": "public/images/svgs/search-icon.svg"
-  },
   "public/images/svgs/rating-star-empty.svg": {
     "file": "assets/rating-star-empty.34c79e79.svg",
     "src": "public/images/svgs/rating-star-empty.svg"
   },
-  "public/images/svgs/arrow-down.svg": {
-    "file": "assets/arrow-down.a172239a.svg",
-    "src": "public/images/svgs/arrow-down.svg"
+  "public/images/svgs/search-icon.svg": {
+    "file": "assets/search-icon.d172078c.svg",
+    "src": "public/images/svgs/search-icon.svg"
   },
   "public/images/svgs/rating-star-active.svg": {
     "file": "assets/rating-star-active.e158f9d6.svg",
     "src": "public/images/svgs/rating-star-active.svg"
+  },
+  "public/images/svgs/arrow-down.svg": {
+    "file": "assets/arrow-down.a172239a.svg",
+    "src": "public/images/svgs/arrow-down.svg"
   },
   "public/images/svgs/favorite-heart-empty.svg": {
     "file": "assets/favorite-heart-empty.7e96b3ff.svg",

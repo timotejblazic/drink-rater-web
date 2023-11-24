@@ -16,7 +16,7 @@
                     @error('name')
                         <p class="drinkadd__form__item__error">{{ $message }}</p>
                     @enderror
-                    
+
                     <div class="drinkadd__form__item">
                         <label for="description" class="drinkadd__form__label">Description</label>
                         <textarea name="description" id="description" cols="30" rows="10" class="drinkadd__form__input"></textarea>
@@ -32,7 +32,7 @@
                     @error('image')
                         <p class="drinkadd__form__item__error">{{ $message }}</p>
                     @enderror
-                    
+
                     <div class="drinkadd__form__checkbox">
                         <div class="drinkadd__form__checkbox__text">Choose ingredients:</div>
                         <div class="drinkadd__form__checkbox__wrap">
@@ -57,26 +57,6 @@
                 </form>
             @endauth
         </div>
-
-        <h1 class="drinkadd__title">Add New Ingredient</h1>
-        <div class="drinkadd__main">
-            @auth
-                <form action="{{ route('drinkaddIngredient') }}" method="POST" class="drinkadd__form">
-                    @csrf
-                    <div class="drinkadd__form__item">
-                        <label for="nameIngredient" class="drinkadd__form__label">Name</label>
-                        <input type="text" name="name" id="nameIngredient" class="drinkadd__form__input">
-                    </div>
-
-                    <div class="drinkadd__form__item">
-                        <button class="drinkadd__form__button button button__primary">
-                            Add ingredient
-                        </button>
-                    </div>
-                </form>
-            @endauth
-        </div>
-            
 
     </div>
 </x-app-layout>
